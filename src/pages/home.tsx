@@ -542,10 +542,10 @@ export default function Home() {
       </header>
 
       <main id="home">
-        <section className="flex flex-col md:flex-row min-h-[600px]">
-          <div className="md:hidden w-full h-[300px] bg-cover bg-center pt-12" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
+        <section className="flex flex-col lg:flex-row min-h-[600px]">
+          <div className="lg:hidden w-full h-[300px] md:h-[400px] bg-cover bg-center pt-12" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
           
-          <div className="w-full md:w-[55%] bg-black flex items-center justify-center px-8 py-20 md:py-0">
+          <div className="w-full lg:w-[55%] bg-black flex items-center justify-center px-8 py-20 lg:py-0">
             <div className="text-center text-white max-w-2xl">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-yellow-400">
                 {t.hero.title}
@@ -569,7 +569,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="hidden md:block md:w-[45%] relative overflow-hidden">
+          <div className="hidden lg:block lg:w-[45%] relative overflow-hidden">
             <img 
               src="/hero.webp" 
               alt="María Lainez Hair Stylist" 
