@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Instagram, Menu, X, Globe, Calendar, Users } from 'lucide-react';
 
@@ -329,12 +330,13 @@ export default function Home() {
             </nav>
 
             <div className="hidden md:flex items-center gap-4">
-              <Button
-                className="bg-black text-white hover:bg-gray-800 font-semibold px-6"
-                onClick={() => scrollToSection('ubicacion')}
-              >
-                {t.nav.reserve}
-              </Button>
+              <Link to="/descargar-app">
+                <Button
+                  className="bg-black text-white hover:bg-gray-800 font-semibold px-6"
+                >
+                  {t.nav.reserve}
+                </Button>
+              </Link>
               
               <div className="relative" ref={dropdownRef}>
                 <div className="flex items-center gap-2 bg-white rounded-md p-1">
@@ -471,12 +473,13 @@ export default function Home() {
               </button>
             </nav>
 
-            <Button
-              className="bg-black text-white hover:bg-gray-800 font-semibold w-full mb-8"
-              onClick={() => scrollToSection('ubicacion')}
-            >
-              {t.nav.reserve}
-            </Button>
+            <Link to="/descargar-app" className="w-full">
+              <Button
+                className="bg-black text-white hover:bg-gray-800 font-semibold w-full mb-8"
+              >
+                {t.nav.reserve}
+              </Button>
+            </Link>
 
             <div className="border-t border-gray-900/20 pt-6">
               <p className="text-sm font-medium text-gray-900 mb-3">Idioma / Language</p>
@@ -518,13 +521,14 @@ export default function Home() {
                   {t.hero.subtitleLink}
                 </button>
               </p>
-              <Button
-                size="lg"
-                className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-bold text-lg px-12 py-6"
-                onClick={() => scrollToSection('ubicacion')}
-              >
-                {t.hero.cta}
-              </Button>
+              <Link to="/descargar-app">
+                <Button
+                  size="lg"
+                  className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-bold text-lg px-12 py-6"
+                >
+                  {t.hero.cta}
+                </Button>
+              </Link>
             </div>
           </div>
           
