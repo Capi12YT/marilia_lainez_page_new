@@ -16,7 +16,8 @@ const translations = {
     },
     hero: {
       title: 'María Lainez Hair Stylist',
-      subtitle: 'Tu estilo, nuestra pasión',
+      subtitle: 'Mejor peluquería de España, no lo decimos nosotros, nuestros',
+      subtitleLink: 'Clientes',
       cta: 'Reservar Ahora',
     },
     history: {
@@ -57,7 +58,8 @@ const translations = {
     },
     hero: {
       title: 'María Lainez Hair Stylist',
-      subtitle: 'Your style, our passion',
+      subtitle: 'Best hair salon in Spain, not our words, our',
+      subtitleLink: 'Clients',
       cta: 'Book Now',
     },
     history: {
@@ -98,7 +100,8 @@ const translations = {
     },
     hero: {
       title: 'María Lainez Coiffeur',
-      subtitle: 'Votre style, notre passion',
+      subtitle: 'Meilleur salon de coiffure d\'Espagne, ce ne sont pas nos mots, nos',
+      subtitleLink: 'Clients',
       cta: 'Réserver Maintenant',
     },
     history: {
@@ -139,7 +142,8 @@ const translations = {
     },
     hero: {
       title: 'María Lainez Friseur',
-      subtitle: 'Ihr Stil, unsere Leidenschaft',
+      subtitle: 'Bester Friseursalon in Spanien, nicht unsere Worte, unsere',
+      subtitleLink: 'Kunden',
       cta: 'Jetzt Buchen',
     },
     history: {
@@ -180,7 +184,8 @@ const translations = {
     },
     hero: {
       title: 'María Lainez Parrucchiere',
-      subtitle: 'Il tuo stile, la nostra passione',
+      subtitle: 'Miglior salone di parrucchiere in Spagna, non sono le nostre parole, i nostri',
+      subtitleLink: 'Clienti',
       cta: 'Prenota Ora',
     },
     history: {
@@ -289,7 +294,7 @@ export default function Home() {
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <img src="/logo.webp" alt="María Lainez Hair Stylist" className="h-12 object-contain" />
+            <img src="/logo-round.png" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full" />
             
             <nav className="hidden md:flex items-center gap-6">
               <button
@@ -424,7 +429,7 @@ export default function Home() {
         >
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-8">
-              <img src="/logo.webp" alt="María Lainez Hair Stylist" className="h-10 object-contain" />
+              <img src="/logo-round.png" alt="María Lainez Hair Stylist" className="h-10 w-10 object-cover rounded-full" />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gray-900 p-2"
@@ -500,13 +505,19 @@ export default function Home() {
         <section className="flex flex-col md:flex-row min-h-[600px]">
           <div className="md:hidden w-full h-[300px] bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
           
-          <div className="w-full md:w-[65%] bg-black flex items-center justify-center px-8 py-20 md:py-0">
+          <div className="w-full md:w-[60%] bg-black flex items-center justify-center px-8 py-20 md:py-0">
             <div className="text-center text-white max-w-2xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-yellow-400">
                 {t.hero.title}
               </h1>
               <p className="text-2xl md:text-3xl mb-10 text-gray-300">
-                {t.hero.subtitle}
+                {t.hero.subtitle}{' '}
+                <button
+                  onClick={() => scrollToSection('reviews')}
+                  className="text-yellow-400 underline hover:text-yellow-300 transition-colors cursor-pointer font-semibold"
+                >
+                  {t.hero.subtitleLink}
+                </button>
               </p>
               <Button
                 size="lg"
@@ -518,10 +529,10 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="hidden md:block md:w-[35%] bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
+          <div className="hidden md:block md:w-[40%] bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section id="reviews" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
               {t.reviews.title}
@@ -637,25 +648,25 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-center text-white mb-12">
               {t.brands.title}
             </h2>
-            <div className="flex flex-col md:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row w-full">
               <div
-                className="bg-white rounded-lg p-8 flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-96"
-                style={{ minHeight: '200px' }}
+                className="bg-white flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12"
+                style={{ minHeight: '280px' }}
               >
                 <img
-                  src="/marca-rica.webp"
+                  src="/marca-rica-new.png"
                   alt="RICA"
-                  className="max-w-full max-h-40 object-contain"
+                  className="max-w-full max-h-48 object-contain"
                 />
               </div>
               <div
-                className="bg-white rounded-lg p-8 flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-96"
-                style={{ minHeight: '200px' }}
+                className="bg-white flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12"
+                style={{ minHeight: '280px' }}
               >
                 <img
                   src="/marca-rossety.png"
                   alt="ROSSETY & SOLÁ BARCELONA"
-                  className="max-w-full max-h-40 object-contain"
+                  className="max-w-full max-h-48 object-contain"
                 />
               </div>
             </div>
@@ -708,7 +719,7 @@ export default function Home() {
 
               <div className="h-80 bg-gray-200 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8469424893956!2d-5.288574!3d36.294767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc3e4c1c1c1c1%3A0x1c1c1c1c1c1c1c1!2sPlaza%20del%20Agua%2C%20Puerto%20Sotogrande%2C%20San%20Roque%2C%20C%C3%A1diz!5e0!3m2!1sen!2ses!4v1234567890123!5m2!1sen!2ses"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.642022879685!2d-5.27386742374792!3d36.29153689620704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0cc5f08ac3e69b%3A0xcfbcef2309f27000!2sMar%C3%ADa%20Lainez%20Hair%20Stylist%20Sotogrande!5e1!3m2!1ses!2ses!4v1766315224338!5m2!1ses!2ses"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
