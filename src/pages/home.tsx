@@ -10,7 +10,7 @@ const translations = {
       about: 'Nosotros',
       services: 'Servicios',
       brands: 'Marcas',
-      contact: 'Ubicación/Horario',
+      contact: 'Donde estamos',
       reserve: 'Reservar',
     },
     hero: {
@@ -59,7 +59,7 @@ const translations = {
       about: 'About Us',
       services: 'Services',
       brands: 'Brands',
-      contact: 'Location/Hours',
+      contact: 'Where we are',
       reserve: 'Book Now',
     },
     hero: {
@@ -108,7 +108,7 @@ const translations = {
       about: 'À propos',
       services: 'Services',
       brands: 'Marques',
-      contact: 'Localisation/Horaires',
+      contact: 'Où nous sommes',
       reserve: 'Réserver',
     },
     hero: {
@@ -157,7 +157,7 @@ const translations = {
       about: 'Über uns',
       services: 'Dienstleistungen',
       brands: 'Marken',
-      contact: 'Standort/Öffnungszeiten',
+      contact: 'Wo wir sind',
       reserve: 'Reservieren',
     },
     hero: {
@@ -206,7 +206,7 @@ const translations = {
       about: 'Chi Siamo',
       services: 'Servizi',
       brands: 'Marchi',
-      contact: 'Posizione/Orari',
+      contact: 'Dove siamo',
       reserve: 'Prenota',
     },
     hero: {
@@ -569,7 +569,13 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="hidden md:block md:w-[45%] bg-cover bg-center object-right-top" style={{ backgroundImage: 'url(/hero.webp)', backgroundPosition: 'right top' }}></div>
+          <div className="hidden md:block md:w-[45%] relative overflow-hidden">
+            <img 
+              src="/hero.webp" 
+              alt="María Lainez Hair Stylist" 
+              className="absolute inset-0 w-full h-full object-cover object-right-top"
+            />
+          </div>
         </section>
 
         <section id="reviews" className="py-20 bg-gray-50">
