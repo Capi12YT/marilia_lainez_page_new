@@ -338,6 +338,8 @@ export default function DescargarApp() {
           </div>
         </div>
       </footer>
+
+      <div className="elfsight-app-5dc44478-8a64-4d4b-9d84-4fc7e17f9b8f" data-elfsight-app-lazy></div>
     </div>
   );
 }
