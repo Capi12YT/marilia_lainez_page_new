@@ -691,7 +691,7 @@ export default function Home() {
             </h2>
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full">
               <div
-                className="bg-white rounded-xl flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12 shadow-2xl"
+                className="bg-black rounded-xl flex items-center justify-center hover:scale-105 hover:border-white hover:border-4 transition-all duration-300 w-full md:w-1/2 p-12 shadow-2xl border-4 border-transparent"
                 style={{ minHeight: '280px' }}
               >
                 <img
@@ -701,7 +701,7 @@ export default function Home() {
                 />
               </div>
               <div
-                className="bg-white rounded-xl flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12 shadow-2xl"
+                className="bg-black rounded-xl flex items-center justify-center hover:scale-105 hover:border-white hover:border-4 transition-all duration-300 w-full md:w-1/2 p-12 shadow-2xl border-4 border-transparent"
                 style={{ minHeight: '280px' }}
               >
                 <img
