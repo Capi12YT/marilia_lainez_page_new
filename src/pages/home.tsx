@@ -227,29 +227,28 @@ export default function Home() {
       </header>
 
       <main id="home">
-        <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/hero-establecimiento.png)' }}
-          >
-            <div className="absolute inset-0 bg-black/40"></div>
+        <section className="flex flex-col md:flex-row min-h-[600px]">
+          <div className="md:hidden w-full h-[300px] bg-cover bg-center" style={{ backgroundImage: 'url(/hero-establecimiento.png)' }}></div>
+          
+          <div className="w-full md:w-[65%] bg-black flex items-center justify-center px-8 py-20 md:py-0">
+            <div className="text-center text-white max-w-2xl">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+                {t.hero.title}
+              </h1>
+              <p className="text-2xl md:text-3xl mb-10 text-gray-300">
+                {t.hero.subtitle}
+              </p>
+              <Button
+                size="lg"
+                className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-bold text-lg px-12 py-6"
+                onClick={() => scrollToSection('ubicacion')}
+              >
+                {t.hero.cta}
+              </Button>
+            </div>
           </div>
           
-          <div className="relative z-10 text-center text-white px-4">
-            <h1 className="text-6xl md:text-7xl font-bold mb-4 drop-shadow-lg">
-              {t.hero.title}
-            </h1>
-            <p className="text-2xl md:text-3xl mb-8 drop-shadow-md">
-              {t.hero.subtitle}
-            </p>
-            <Button
-              size="lg"
-              className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-bold text-lg px-12 py-6 text-xl"
-              onClick={() => scrollToSection('ubicacion')}
-            >
-              {t.hero.cta}
-            </Button>
-          </div>
+          <div className="hidden md:block md:w-[35%] bg-cover bg-center" style={{ backgroundImage: 'url(/hero-establecimiento.png)' }}></div>
         </section>
 
         <section id="historia" className="py-20 bg-white">
