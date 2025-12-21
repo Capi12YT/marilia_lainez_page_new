@@ -539,10 +539,6 @@ export default function Home() {
 
         <section id="reviews" className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-              {t.reviews.title}
-            </h2>
-            
             <div className="flex justify-center">
               <div className="elfsight-app-5443c9fc-9ef5-44d6-87f5-0a2790a260be" data-elfsight-app-lazy></div>
             </div>
