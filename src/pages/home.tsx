@@ -49,9 +49,8 @@ const translations = {
       time2: '10:00 - 14:00',
     },
     footer: {
+      brandName: 'María Lainez Hair Stylist',
       designed: 'Diseñado por CapJe © 2026',
-      legal: 'Aviso Legal',
-      privacy: 'Política de Privacidad',
     },
   },
   EN: {
@@ -98,9 +97,8 @@ const translations = {
       time2: '10:00 - 14:00',
     },
     footer: {
+      brandName: 'María Lainez Hair Stylist',
       designed: 'Designed by CapJe © 2026',
-      legal: 'Legal Notice',
-      privacy: 'Privacy Policy',
     },
   },
   FR: {
@@ -147,9 +145,8 @@ const translations = {
       time2: '10:00 - 14:00',
     },
     footer: {
+      brandName: 'María Lainez Coiffeur',
       designed: 'Conçu par CapJe © 2026',
-      legal: 'Mentions Légales',
-      privacy: 'Politique de Confidentialité',
     },
   },
   DE: {
@@ -196,9 +193,8 @@ const translations = {
       time2: '10:00 - 14:00',
     },
     footer: {
+      brandName: 'María Lainez Friseur',
       designed: 'Entworfen von CapJe © 2026',
-      legal: 'Impressum',
-      privacy: 'Datenschutz',
     },
   },
   IT: {
@@ -245,9 +241,8 @@ const translations = {
       time2: '10:00 - 14:00',
     },
     footer: {
+      brandName: 'María Lainez Parrucchiere',
       designed: 'Progettato da CapJe © 2026',
-      legal: 'Note Legali',
-      privacy: 'Informativa sulla Privacy',
     },
   },
 };
@@ -542,12 +537,12 @@ export default function Home() {
       </header>
 
       <main id="home">
-        <section className="flex flex-col lg:flex-row h-[calc(100vh-64px)]">
-          <div className="lg:hidden w-full h-1/2 bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)', backgroundPosition: 'left top' }}></div>
+        <section className="flex flex-col xl:flex-row h-[calc(100vh-64px)]">
+          <div className="xl:hidden w-full h-1/2 bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)', backgroundPosition: 'left top' }}></div>
           
-          <div className="w-full lg:w-[55%] h-1/2 lg:h-full bg-black flex items-center justify-center px-8 py-12">
+          <div className="w-full xl:w-[55%] h-1/2 xl:h-full bg-black flex items-center justify-center px-8 py-12">
             <div className="text-center text-white max-w-2xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-yellow-400">
+              <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-6 text-yellow-400">
                 {t.hero.title}
               </h1>
               <p className="text-lg md:text-xl mb-10 text-gray-300">
@@ -569,7 +564,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="hidden lg:block lg:w-[45%] lg:h-full relative overflow-hidden">
+          <div className="hidden xl:block xl:w-[45%] xl:h-full relative overflow-hidden">
             <img 
               src="/hero.webp" 
               alt="María Lainez Hair Stylist" 
@@ -810,25 +805,14 @@ export default function Home() {
 
       <footer className="bg-yellow-400 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-900 font-medium">
-              {t.footer.designed}
-            </p>
-            
-            <div className="flex items-center gap-6">
-              <a
-                href="/legal"
-                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
-              >
-                {t.footer.legal}
-              </a>
-              <span className="text-gray-900">|</span>
-              <a
-                href="/privacy"
-                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
-              >
-                {t.footer.privacy}
-              </a>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col items-center md:items-start gap-2">
+              <p className="text-gray-900 font-bold text-lg">
+                {t.footer.brandName}
+              </p>
+              <p className="text-gray-900 font-medium text-sm">
+                {t.footer.designed}
+              </p>
             </div>
             
             <div className="flex items-center gap-4">
