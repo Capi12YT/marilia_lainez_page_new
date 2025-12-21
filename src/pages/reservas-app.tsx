@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Menu, X, Globe, Smartphone, Download, Calendar, Bell, Clock, Star, CheckCircle2, Gift } from 'lucide-react';
+import { Instagram, Menu, X, Globe, Smartphone, Download, Calendar, Bell, Clock, Star, CheckCircle2, Image, AlarmClock } from 'lucide-react';
 
 type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
@@ -34,16 +34,16 @@ const translations = {
       title: 'Características de la App',
       feature1Title: 'Reservas Rápidas',
       feature1Text: 'Agenda tu cita en menos de 30 segundos',
-      feature2Title: 'Ofertas Exclusivas',
-      feature2Text: 'Accede a promociones solo para usuarios de la app',
+      feature2Title: 'Galería de Peinados',
+      feature2Text: 'Explora estilos y tendencias para inspirarte',
       feature3Title: 'Notificaciones',
-      feature3Text: 'Recordatorios automáticos de tus citas',
+      feature3Text: 'Recordatorios de tus citas programadas',
       feature4Title: 'Historial Completo',
       feature4Text: 'Consulta todos tus servicios anteriores',
       feature5Title: 'Recompensas',
       feature5Text: 'Acumula puntos con cada visita',
-      feature6Title: 'Disponibilidad 24/7',
-      feature6Text: 'Reserva cuando quieras, donde quieras',
+      feature6Title: 'Recordatorios Automáticos',
+      feature6Text: 'No te pierdas ninguna cita con alertas inteligentes',
     },
     cta: {
       title: '¿Listo para comenzar?',
@@ -84,16 +84,16 @@ const translations = {
       title: 'App Features',
       feature1Title: 'Quick Bookings',
       feature1Text: 'Schedule your appointment in less than 30 seconds',
-      feature2Title: 'Exclusive Offers',
-      feature2Text: 'Access promotions only for app users',
+      feature2Title: 'Hairstyle Gallery',
+      feature2Text: 'Explore styles and trends for inspiration',
       feature3Title: 'Notifications',
-      feature3Text: 'Automatic reminders for your appointments',
+      feature3Text: 'Reminders for your scheduled appointments',
       feature4Title: 'Complete History',
       feature4Text: 'Check all your previous services',
       feature5Title: 'Rewards',
       feature5Text: 'Earn points with every visit',
-      feature6Title: '24/7 Availability',
-      feature6Text: 'Book whenever you want, wherever you are',
+      feature6Title: 'Automatic Reminders',
+      feature6Text: 'Never miss an appointment with smart alerts',
     },
     cta: {
       title: 'Ready to get started?',
@@ -134,16 +134,16 @@ const translations = {
       title: 'Caractéristiques de l\'App',
       feature1Title: 'Réservations Rapides',
       feature1Text: 'Planifiez votre rendez-vous en moins de 30 secondes',
-      feature2Title: 'Offres Exclusives',
-      feature2Text: 'Accédez aux promotions réservées aux utilisateurs de l\'app',
+      feature2Title: 'Galerie de Coiffures',
+      feature2Text: 'Explorez styles et tendances pour vous inspirer',
       feature3Title: 'Notifications',
-      feature3Text: 'Rappels automatiques de vos rendez-vous',
+      feature3Text: 'Rappels de vos rendez-vous programmés',
       feature4Title: 'Historique Complet',
       feature4Text: 'Consultez tous vos services précédents',
       feature5Title: 'Récompenses',
       feature5Text: 'Accumulez des points à chaque visite',
-      feature6Title: 'Disponibilité 24/7',
-      feature6Text: 'Réservez quand vous voulez, où vous voulez',
+      feature6Title: 'Rappels Automatiques',
+      feature6Text: 'Ne manquez aucun rendez-vous avec des alertes intelligentes',
     },
     cta: {
       title: 'Prêt à commencer ?',
@@ -184,16 +184,16 @@ const translations = {
       title: 'App-Funktionen',
       feature1Title: 'Schnelle Buchungen',
       feature1Text: 'Planen Sie Ihren Termin in weniger als 30 Sekunden',
-      feature2Title: 'Exklusive Angebote',
-      feature2Text: 'Zugang zu Aktionen nur für App-Nutzer',
+      feature2Title: 'Frisuren-Galerie',
+      feature2Text: 'Entdecken Sie Stile und Trends zur Inspiration',
       feature3Title: 'Benachrichtigungen',
-      feature3Text: 'Automatische Erinnerungen an Ihre Termine',
+      feature3Text: 'Erinnerungen an Ihre geplanten Termine',
       feature4Title: 'Vollständiger Verlauf',
       feature4Text: 'Überprüfen Sie alle Ihre früheren Services',
       feature5Title: 'Belohnungen',
       feature5Text: 'Sammeln Sie Punkte bei jedem Besuch',
-      feature6Title: 'Verfügbarkeit 24/7',
-      feature6Text: 'Buchen Sie wann und wo Sie wollen',
+      feature6Title: 'Automatische Erinnerungen',
+      feature6Text: 'Verpassen Sie keinen Termin mit intelligenten Warnungen',
     },
     cta: {
       title: 'Bereit anzufangen?',
@@ -234,16 +234,16 @@ const translations = {
       title: 'Caratteristiche dell\'App',
       feature1Title: 'Prenotazioni Veloci',
       feature1Text: 'Pianifica il tuo appuntamento in meno di 30 secondi',
-      feature2Title: 'Offerte Esclusive',
-      feature2Text: 'Accedi a promozioni solo per utenti dell\'app',
+      feature2Title: 'Galleria di Acconciature',
+      feature2Text: 'Esplora stili e tendenze per ispirarti',
       feature3Title: 'Notifiche',
-      feature3Text: 'Promemoria automatici dei tuoi appuntamenti',
+      feature3Text: 'Promemoria dei tuoi appuntamenti programmati',
       feature4Title: 'Cronologia Completa',
       feature4Text: 'Consulta tutti i tuoi servizi precedenti',
       feature5Title: 'Ricompense',
       feature5Text: 'Accumula punti ad ogni visita',
-      feature6Title: 'Disponibilità 24/7',
-      feature6Text: 'Prenota quando vuoi, dove vuoi',
+      feature6Title: 'Promemoria Automatici',
+      feature6Text: 'Non perdere nessun appuntamento con avvisi intelligenti',
     },
     cta: {
       title: 'Pronto per iniziare?',
@@ -446,7 +446,7 @@ export default function ReservasApp() {
         </>
       )}
 
-      <main className="flex-grow">
+      <main className="flex-1">
         <section className="py-16 md:py-24 px-4 sm:px-6 bg-gradient-to-br from-yellow-100 via-white to-yellow-50">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
@@ -604,7 +604,7 @@ export default function ReservasApp() {
 
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-yellow-400">
                 <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                  <Gift className="h-8 w-8 text-yellow-600" />
+                  <Image className="h-8 w-8 text-yellow-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {t.features.feature2Title}
@@ -652,7 +652,7 @@ export default function ReservasApp() {
 
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-yellow-400">
                 <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                  <Smartphone className="h-8 w-8 text-yellow-600" />
+                  <AlarmClock className="h-8 w-8 text-yellow-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {t.features.feature6Title}

@@ -1,9 +1,19 @@
-import { Smartphone, Check, Calendar, Gift, Clock, Bell, Star, Download, Instagram } from 'lucide-react';
-import { useState } from 'react';
+import { Smartphone, Check, Calendar, Gift, Clock, Bell, Star, Download, Instagram, Menu, X, Globe } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+
+type Language = 'es' | 'en' | 'fr' | 'de' | 'it';
 
 const translations = {
   es: {
+    nav: {
+      about: 'Nosotros',
+      services: 'Servicios',
+      brands: 'Marcas',
+      contact: 'Donde estamos',
+      reserve: 'Reservar',
+    },
     backToHome: 'Volver al inicio',
     title: 'Descarga nuestra App Móvil',
     subtitle: 'Gestiona tus citas de belleza desde tu móvil de forma rápida y sencilla',
@@ -30,6 +40,13 @@ const translations = {
     },
   },
   en: {
+    nav: {
+      about: 'About Us',
+      services: 'Services',
+      brands: 'Brands',
+      contact: 'Where we are',
+      reserve: 'Book Now',
+    },
     backToHome: 'Back to Home',
     title: 'Download our Mobile App',
     subtitle: 'Manage your beauty appointments from your mobile quickly and easily',
@@ -56,6 +73,13 @@ const translations = {
     },
   },
   fr: {
+    nav: {
+      about: 'À propos',
+      services: 'Services',
+      brands: 'Marques',
+      contact: 'Où nous sommes',
+      reserve: 'Réserver',
+    },
     backToHome: 'Retour à l\'accueil',
     title: 'Téléchargez notre App Mobile',
     subtitle: 'Gérez vos rendez-vous beauté depuis votre mobile rapidement et facilement',
@@ -82,6 +106,13 @@ const translations = {
     },
   },
   de: {
+    nav: {
+      about: 'Über uns',
+      services: 'Dienstleistungen',
+      brands: 'Marken',
+      contact: 'Wo wir sind',
+      reserve: 'Buchen',
+    },
     backToHome: 'Zurück zur Startseite',
     title: 'Laden Sie unsere Mobile App herunter',
     subtitle: 'Verwalten Sie Ihre Beauty-Termine schnell und einfach von Ihrem Handy aus',
@@ -108,6 +139,13 @@ const translations = {
     },
   },
   it: {
+    nav: {
+      about: 'Chi siamo',
+      services: 'Servizi',
+      brands: 'Marchi',
+      contact: 'Dove siamo',
+      reserve: 'Prenota',
+    },
     backToHome: 'Torna alla home',
     title: 'Scarica la nostra App Mobile',
     subtitle: 'Gestisci i tuoi appuntamenti di bellezza dal tuo cellulare in modo rapido e semplice',
@@ -136,8 +174,34 @@ const translations = {
 };
 
 export default function DescargarApp() {
-  const [lang, setLang] = useState<keyof typeof translations>('es');
+  const [lang, setLang] = useState<Language>('es');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  
   const t = translations[lang];
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setLangDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleLanguageChange = (newLang: Language) => {
+    setLang(newLang);
+    setLangDropdownOpen(false);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
 
   const featureIcons = [Calendar, Gift, Clock, Bell, Star, Download];
 
@@ -146,35 +210,188 @@ export default function DescargarApp() {
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105">
-              <img 
-                src="/logo.jpg" 
-                alt="María Lainez Logo" 
-                className="h-12 w-12 rounded-full object-cover"
-              />
-            </Link>
-
-            <Link 
-              to="/" 
-              className="text-gray-900 hover:text-gray-700 font-semibold transition-colors text-sm md:text-base"
+            <button 
+              onClick={scrollToTop}
+              className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
+              aria-label="Ir al inicio"
             >
-              ← {t.backToHome}
+              <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full cursor-pointer" />
+            </button>
+            
+            <nav className="hidden md:flex items-center gap-6">
+              <Link to="/#historia" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+                {t.nav.about}
+              </Link>
+              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+                {t.nav.services}
+              </Link>
+              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+                {t.nav.brands}
+              </Link>
+              <Link to="/#ubicacion" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+                {t.nav.contact}
+              </Link>
+              <Link to="/" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+                {t.backToHome}
+              </Link>
+            </nav>
+
+            <div className="hidden md:flex items-center gap-4">
+              <Link to="/reservas-app">
+                <Button className="bg-black text-white hover:bg-gray-800 font-semibold px-6">
+                  {t.nav.reserve}
+                </Button>
+              </Link>
+              
+              <div className="relative" ref={dropdownRef}>
+                <div className="flex items-center gap-2 bg-white rounded-md p-1">
+                  <button
+                    onClick={() => handleLanguageChange('es')}
+                    className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                      lang === 'es'
+                        ? 'bg-yellow-400 text-gray-900'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    ES
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange('en')}
+                    className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                      lang === 'en'
+                        ? 'bg-yellow-400 text-gray-900'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    EN
+                  </button>
+                  <button
+                    onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                    className="px-2 py-1 text-gray-600 hover:text-gray-900 transition-colors"
+                    aria-label="More languages"
+                  >
+                    <Globe className="w-4 h-4" />
+                  </button>
+                </div>
+
+                {langDropdownOpen && (
+                  <div className="absolute top-full right-0 mt-2 bg-white rounded-md shadow-lg p-1 z-50 min-w-[100px] animate-in fade-in slide-in-from-top-2 duration-200">
+                    <button
+                      onClick={() => handleLanguageChange('fr')}
+                      className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                        lang === 'fr'
+                          ? 'bg-yellow-400 text-gray-900'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      FR
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange('de')}
+                      className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                        lang === 'de'
+                          ? 'bg-yellow-400 text-gray-900'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      DE
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange('it')}
+                      className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                        lang === 'it'
+                          ? 'bg-yellow-400 text-gray-900'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      IT
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <button
+              className="md:hidden text-gray-900 p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity md:hidden ${
+            mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+
+        <div
+          className={`fixed top-0 right-0 h-full w-80 bg-yellow-400 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="flex flex-col h-full p-6">
+            <div className="flex items-center justify-between mb-8">
+              <button 
+                onClick={scrollToTop}
+                className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
+                aria-label="Ir al inicio"
+              >
+                <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-10 w-10 object-cover rounded-full cursor-pointer" />
+              </button>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gray-900 p-2"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-4 mb-8">
+              <Link to="/#historia" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
+                {t.nav.about}
+              </Link>
+              <Link to="/#marcas" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
+                {t.nav.services}
+              </Link>
+              <Link to="/#marcas" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
+                {t.nav.brands}
+              </Link>
+              <Link to="/#ubicacion" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
+                {t.nav.contact}
+              </Link>
+              <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
+                {t.backToHome}
+              </Link>
+            </nav>
+
+            <Link to="/reservas-app" className="w-full" onClick={() => setMobileMenuOpen(false)}>
+              <Button className="bg-black text-white hover:bg-gray-800 font-semibold w-full mb-8">
+                {t.nav.reserve}
+              </Button>
             </Link>
 
-            <div className="flex items-center gap-2">
-              {(['es', 'en', 'fr', 'de', 'it'] as const).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                    lang === l
-                      ? 'bg-gray-900 text-white'
-                      : 'bg-white text-gray-600 hover:bg-gray-100'
-                  }`}
-                >
-                  {l.toUpperCase()}
-                </button>
-              ))}
+            <div className="border-t border-gray-900/20 pt-6">
+              <p className="text-sm font-medium text-gray-900 mb-3">Idioma / Language</p>
+              <div className="grid grid-cols-3 gap-2">
+                {(['es', 'en', 'fr', 'de', 'it'] as Language[]).map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => { setLang(l); setMobileMenuOpen(false); }}
+                    className={`px-3 py-2 rounded text-sm font-medium transition-colors ${
+                      lang === l
+                        ? 'bg-gray-900 text-white'
+                        : 'bg-white text-gray-900 hover:bg-gray-100'
+                    }`}
+                  >
+                    {l.toUpperCase()}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
