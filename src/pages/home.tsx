@@ -689,9 +689,9 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-center text-white mb-12">
               {t.brands.title}
             </h2>
-            <div className="flex flex-col md:flex-row w-full">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full">
               <div
-                className="bg-white flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12"
+                className="bg-white rounded-xl flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12 shadow-2xl"
                 style={{ minHeight: '280px' }}
               >
                 <img
@@ -701,7 +701,7 @@ export default function Home() {
                 />
               </div>
               <div
-                className="bg-white flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12"
+                className="bg-white rounded-xl flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-12 shadow-2xl"
                 style={{ minHeight: '280px' }}
               >
                 <img
