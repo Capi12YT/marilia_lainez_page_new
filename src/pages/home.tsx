@@ -573,7 +573,7 @@ export default function Home() {
             <img 
               src="/hero.webp" 
               alt="María Lainez Hair Stylist" 
-              className="absolute inset-0 w-full h-full object-cover object-right-top"
+              className="absolute inset-0 w-full h-full object-cover object-left-top"
             />
           </div>
         </section>
