@@ -1,4 +1,4 @@
-import { Smartphone, Check, Calendar, Gift, Clock, Bell, Star, Download, Instagram, Menu, X, Globe } from 'lucide-react';
+import { Smartphone, Check, Calendar, Clock, Bell, Star, Instagram, Menu, X, Globe } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -22,11 +22,9 @@ const translations = {
       title: 'Características de la App',
       items: [
         'Reserva tus citas en segundos',
-        'Ofertas exclusivas para usuarios de la app',
         'Historial completo de tus visitas',
         'Notificaciones de recordatorio',
         'Acceso a tu perfil y preferencias',
-        'Atención al cliente 24/7',
       ],
     },
     benefits: {
@@ -55,11 +53,9 @@ const translations = {
       title: 'App Features',
       items: [
         'Book your appointments in seconds',
-        'Exclusive offers for app users',
         'Complete history of your visits',
         'Reminder notifications',
         'Access to your profile and preferences',
-        '24/7 customer support',
       ],
     },
     benefits: {
@@ -88,11 +84,9 @@ const translations = {
       title: 'Fonctionnalités de l\'App',
       items: [
         'Réservez vos rendez-vous en quelques secondes',
-        'Offres exclusives pour les utilisateurs de l\'app',
         'Historique complet de vos visites',
         'Notifications de rappel',
         'Accès à votre profil et préférences',
-        'Service client 24/7',
       ],
     },
     benefits: {
@@ -121,11 +115,9 @@ const translations = {
       title: 'App-Funktionen',
       items: [
         'Buchen Sie Ihre Termine in Sekunden',
-        'Exklusive Angebote für App-Nutzer',
         'Vollständige Historie Ihrer Besuche',
         'Erinnerungsbenachrichtigungen',
         'Zugriff auf Ihr Profil und Ihre Präferenzen',
-        '24/7 Kundenservice',
       ],
     },
     benefits: {
@@ -154,11 +146,9 @@ const translations = {
       title: 'Caratteristiche dell\'App',
       items: [
         'Prenota i tuoi appuntamenti in pochi secondi',
-        'Offerte esclusive per gli utenti dell\'app',
         'Storico completo delle tue visite',
         'Notifiche di promemoria',
         'Accesso al tuo profilo e preferenze',
-        'Assistenza clienti 24/7',
       ],
     },
     benefits: {
@@ -203,7 +193,7 @@ export default function DescargarApp() {
     setMobileMenuOpen(false);
   };
 
-  const featureIcons = [Calendar, Gift, Clock, Bell, Star, Download];
+  const featureIcons = [Calendar, Clock, Bell, Star];
 
   return (
     <div className="min-h-screen bg-white">
@@ -455,7 +445,7 @@ export default function DescargarApp() {
                       {t.comingSoon}
                     </div>
                   </div>
-                  <Download className="w-6 h-6 opacity-50" />
+                  <Smartphone className="w-6 h-6 opacity-50" />
                 </Link>
 
                 <Link
@@ -473,7 +463,7 @@ export default function DescargarApp() {
                       {t.comingSoon}
                     </div>
                   </div>
-                  <Download className="w-6 h-6 opacity-50" />
+                  <Smartphone className="w-6 h-6 opacity-50" />
                 </Link>
               </div>
             </div>
@@ -489,7 +479,7 @@ export default function DescargarApp() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {t.features.items.map((feature, index) => {
                 const Icon = featureIcons[index];
                 return (
