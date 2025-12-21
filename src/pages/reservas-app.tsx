@@ -305,7 +305,7 @@ export default function ReservasApp() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               to="/"
-              className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+              className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
             >
               {t.nav.backToHome}
             </Link>

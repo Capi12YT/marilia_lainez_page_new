@@ -209,19 +209,19 @@ export default function DescargarApp() {
             </button>
             
             <nav className="hidden md:flex items-center gap-6">
-              <Link to="/#historia" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+              <Link to="/#historia" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.about}
               </Link>
-              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.services}
               </Link>
-              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.brands}
               </Link>
-              <Link to="/#ubicacion" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+              <Link to="/#ubicacion" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.contact}
               </Link>
-              <Link to="/" className="text-gray-900 hover:text-gray-700 font-medium transition-colors">
+              <Link to="/" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.backToHome}
               </Link>
             </nav>
@@ -422,52 +422,6 @@ export default function DescargarApp() {
               </div>
             </div>
 
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  {t.downloadFor}:
-                </h2>
-                
-                <Link
-                  to="/reservas-app"
-                  className="flex items-center gap-4 bg-black text-white p-6 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-lg group"
-                >
-                  <div className="bg-white rounded-xl p-3">
-                    <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none">
-                      <path d="M3 20.5V3.5C3 2.4 3.9 1.5 5 1.5H19C20.1 1.5 21 2.4 21 3.5V20.5C21 21.6 20.1 22.5 19 22.5H5C3.9 22.5 3 21.6 3 20.5Z" fill="#34A853"/>
-                      <path d="M3 3.5L13.5 12L3 20.5V3.5Z" fill="#EA4335"/>
-                      <path d="M3 3.5L13.5 12L21 3.5H3Z" fill="#FBBC04"/>
-                      <path d="M3 20.5L13.5 12L21 20.5H3Z" fill="#4285F4"/>
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <div className="text-sm text-gray-300">Google Play</div>
-                    <div className="text-lg font-semibold group-hover:text-yellow-400 transition-colors">
-                      {t.comingSoon}
-                    </div>
-                  </div>
-                  <Smartphone className="w-6 h-6 opacity-50" />
-                </Link>
-
-                <Link
-                  to="/reservas-app"
-                  className="flex items-center gap-4 bg-black text-white p-6 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-lg group"
-                >
-                  <div className="bg-white rounded-xl p-3">
-                    <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <div className="text-sm text-gray-300">App Store</div>
-                    <div className="text-lg font-semibold group-hover:text-yellow-400 transition-colors">
-                      {t.comingSoon}
-                    </div>
-                  </div>
-                  <Smartphone className="w-6 h-6 opacity-50" />
-                </Link>
-              </div>
-            </div>
           </div>
 
           <div className="max-w-5xl mx-auto">

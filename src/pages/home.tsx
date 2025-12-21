@@ -305,25 +305,25 @@ export default function Home() {
             <nav className="hidden md:flex items-center gap-6">
               <button
                 onClick={() => scrollToSection('historia')}
-                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
                 {t.nav.about}
               </button>
               <button
                 onClick={() => scrollToSection('marcas')}
-                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
                 {t.nav.services}
               </button>
               <button
                 onClick={() => scrollToSection('marcas')}
-                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
                 {t.nav.brands}
               </button>
               <button
                 onClick={() => scrollToSection('ubicacion')}
-                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
                 {t.nav.contact}
               </button>
