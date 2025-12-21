@@ -27,7 +27,7 @@ const translations = {
       satisfiedClients: 'Clientes Satisfechos',
     },
     reviews: {
-      title: 'Lo Que Dicen Nuestros Clientes',
+      title: 'Lo Que Dicen Nuestras Clientes',
     },
     brands: {
       title: 'Nuestras Marcas',
@@ -123,7 +123,7 @@ const translations = {
       satisfiedClients: 'Clients Satisfaits',
     },
     reviews: {
-      title: 'Ce Que Disent Nos Clients',
+      title: 'Ce Que Disent Nos Clientes',
     },
     brands: {
       title: 'Nos Marques',
@@ -171,7 +171,7 @@ const translations = {
       satisfiedClients: 'Zufriedene Kunden',
     },
     reviews: {
-      title: 'Was Unsere Kunden Sagen',
+      title: 'Was Unsere Kundinnen Sagen',
     },
     brands: {
       title: 'Unsere Marken',
@@ -219,7 +219,7 @@ const translations = {
       satisfiedClients: 'Clienti Soddisfatti',
     },
     reviews: {
-      title: 'Cosa Dicono I Nostri Clienti',
+      title: 'Cosa Dicono Le Nostre Clienti',
     },
     brands: {
       title: 'I Nostri Marchi',
@@ -543,6 +543,12 @@ export default function Home() {
 
         <section id="reviews" className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
+              {t.reviews.title}
+            </h2>
+            <div className="flex justify-center mb-12">
+              <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+            </div>
             <div className="flex justify-center">
               <div className="elfsight-app-5443c9fc-9ef5-44d6-87f5-0a2790a260be" data-elfsight-app-lazy></div>
             </div>
@@ -551,9 +557,12 @@ export default function Home() {
 
         <section id="historia" className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
               {t.history.title}
             </h2>
+            <div className="flex justify-center mb-12">
+              <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+            </div>
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div className="order-2 md:order-1">
                 <img
@@ -633,9 +642,12 @@ export default function Home() {
 
         <section id="ubicacion" className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
               {t.location.title}
             </h2>
+            <div className="flex justify-center mb-12">
+              <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+            </div>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8 md:items-start">
               <div className="space-y-6">
