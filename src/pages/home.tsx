@@ -294,7 +294,7 @@ export default function Home() {
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <img src="/logo-round.png" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full" />
+            <img src="/logo-m.png" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full" />
             
             <nav className="hidden md:flex items-center gap-6">
               <button
@@ -429,7 +429,7 @@ export default function Home() {
         >
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-8">
-              <img src="/logo-round.png" alt="María Lainez Hair Stylist" className="h-10 w-10 object-cover rounded-full" />
+              <img src="/logo-m.png" alt="María Lainez Hair Stylist" className="h-10 w-10 object-cover rounded-full" />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gray-900 p-2"
@@ -503,14 +503,14 @@ export default function Home() {
 
       <main id="home">
         <section className="flex flex-col md:flex-row min-h-[600px]">
-          <div className="md:hidden w-full h-[300px] bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
+          <div className="md:hidden w-full h-[300px] bg-cover bg-center pt-12" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
           
           <div className="w-full md:w-[55%] bg-black flex items-center justify-center px-8 py-20 md:py-0">
             <div className="text-center text-white max-w-2xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-yellow-400">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-yellow-400">
                 {t.hero.title}
               </h1>
-              <p className="text-2xl md:text-3xl mb-10 text-gray-300">
+              <p className="text-lg md:text-xl mb-10 text-gray-300">
                 {t.hero.subtitle}{' '}
                 <button
                   onClick={() => scrollToSection('reviews')}
@@ -529,7 +529,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="hidden md:block md:w-[45%] bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
+          <div className="hidden md:block md:w-[45%] bg-cover bg-center object-right-top" style={{ backgroundImage: 'url(/hero.webp)', backgroundPosition: 'right top' }}></div>
         </section>
 
         <section id="reviews" className="py-20 bg-gray-50">
