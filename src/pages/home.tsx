@@ -15,13 +15,13 @@ const translations = {
       reserve: 'Reservar',
     },
     hero: {
-      title: 'CapJe Restaurante',
-      subtitle: 'Experiencia culinaria única',
+      title: 'María Lainez Hair Stylist',
+      subtitle: 'Tu estilo, nuestra pasión',
       cta: 'Reservar Ahora',
     },
     history: {
       title: 'Nuestra Historia',
-      text: 'CapJe nació con la visión de ofrecer las mejores marcas y productos de calidad a nuestros clientes. Desde nuestros humildes comienzos, hemos crecido para convertirnos en un referente en el sector, manteniendo siempre nuestro compromiso con la excelencia y el servicio al cliente. Cada día trabajamos para superar las expectativas y crear experiencias memorables.',
+      text: 'María Lainez Hair Stylist nació con la visión de ofrecer servicios de peluquería de la más alta calidad utilizando las mejores marcas profesionales. Desde nuestros humildes comienzos, nos hemos convertido en un referente en estilismo capilar en Puerto Sotogrande, manteniendo siempre nuestro compromiso con la excelencia y la satisfacción del cliente. Cada día trabajamos con pasión para realzar tu belleza natural y crear looks únicos que reflejen tu personalidad.',
       yearsExperience: 'Años de Experiencia',
       satisfiedClients: 'Clientes Satisfechos',
     },
@@ -34,8 +34,10 @@ const translations = {
     location: {
       title: 'Nuestra Ubicación',
       phone: 'Teléfono',
+      address: 'Dirección',
+      addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
       hours: 'Horario',
-      weekdays: 'Lunes a Viernes: 9:00-18:00',
+      weekdays: 'Lunes a Viernes: 10:00-20:00',
       saturday: 'Sábado: 10:00-14:00',
     },
     footer: {
@@ -54,13 +56,13 @@ const translations = {
       reserve: 'Book Now',
     },
     hero: {
-      title: 'CapJe Restaurant',
-      subtitle: 'Unique culinary experience',
+      title: 'María Lainez Hair Stylist',
+      subtitle: 'Your style, our passion',
       cta: 'Book Now',
     },
     history: {
       title: 'Our Story',
-      text: 'CapJe was born with the vision of offering the best brands and quality products to our customers. From our humble beginnings, we have grown to become a benchmark in the sector, always maintaining our commitment to excellence and customer service. Every day we work to exceed expectations and create memorable experiences.',
+      text: 'María Lainez Hair Stylist was born with the vision of offering the highest quality hairdressing services using the best professional brands. From our humble beginnings, we have become a benchmark in hair styling in Puerto Sotogrande, always maintaining our commitment to excellence and customer satisfaction. Every day we work with passion to enhance your natural beauty and create unique looks that reflect your personality.',
       yearsExperience: 'Years of Experience',
       satisfiedClients: 'Satisfied Clients',
     },
@@ -73,8 +75,10 @@ const translations = {
     location: {
       title: 'Our Location',
       phone: 'Phone',
+      address: 'Address',
+      addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
       hours: 'Hours',
-      weekdays: 'Monday to Friday: 9:00-18:00',
+      weekdays: 'Monday to Friday: 10:00-20:00',
       saturday: 'Saturday: 10:00-14:00',
     },
     footer: {
@@ -93,13 +97,13 @@ const translations = {
       reserve: 'Réserver',
     },
     hero: {
-      title: 'CapJe Restaurant',
-      subtitle: 'Expérience culinaire unique',
+      title: 'María Lainez Coiffeur',
+      subtitle: 'Votre style, notre passion',
       cta: 'Réserver Maintenant',
     },
     history: {
       title: 'Notre Histoire',
-      text: "CapJe est né avec la vision d'offrir les meilleures marques et produits de qualité à nos clients. Depuis nos modestes débuts, nous sommes devenus une référence dans le secteur, en maintenant toujours notre engagement envers l'excellence et le service client. Chaque jour, nous travaillons pour dépasser les attentes et créer des expériences mémorables.",
+      text: "María Lainez Coiffeur est né avec la vision d'offrir des services de coiffure de la plus haute qualité en utilisant les meilleures marques professionnelles. Depuis nos modestes débuts, nous sommes devenus une référence en stylisme capillaire à Puerto Sotogrande, en maintenant toujours notre engagement envers l'excellence et la satisfaction client. Chaque jour, nous travaillons avec passion pour sublimer votre beauté naturelle et créer des looks uniques qui reflètent votre personnalité.",
       yearsExperience: 'Ans d\'Expérience',
       satisfiedClients: 'Clients Satisfaits',
     },
@@ -112,8 +116,10 @@ const translations = {
     location: {
       title: 'Notre Emplacement',
       phone: 'Téléphone',
+      address: 'Adresse',
+      addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
       hours: 'Horaires',
-      weekdays: 'Lundi au Vendredi: 9:00-18:00',
+      weekdays: 'Lundi au Vendredi: 10:00-20:00',
       saturday: 'Samedi: 10:00-14:00',
     },
     footer: {
@@ -132,13 +138,13 @@ const translations = {
       reserve: 'Reservieren',
     },
     hero: {
-      title: 'CapJe Restaurant',
-      subtitle: 'Einzigartiges kulinarisches Erlebnis',
-      cta: 'Jetzt Reservieren',
+      title: 'María Lainez Friseur',
+      subtitle: 'Ihr Stil, unsere Leidenschaft',
+      cta: 'Jetzt Buchen',
     },
     history: {
       title: 'Unsere Geschichte',
-      text: 'CapJe wurde mit der Vision gegründet, unseren Kunden die besten Marken und Qualitätsprodukte anzubieten. Von unseren bescheidenen Anfängen an sind wir zu einem Maßstab in der Branche geworden und haben dabei stets unser Engagement für Exzellenz und Kundenservice beibehalten. Jeden Tag arbeiten wir daran, Erwartungen zu übertreffen und unvergessliche Erlebnisse zu schaffen.',
+      text: 'María Lainez Friseur wurde mit der Vision gegründet, Friseurdienstleistungen höchster Qualität unter Verwendung der besten professionellen Marken anzubieten. Von unseren bescheidenen Anfängen an sind wir zu einem Maßstab im Haarstyling in Puerto Sotogrande geworden und haben dabei stets unser Engagement für Exzellenz und Kundenzufriedenheit beibehalten. Jeden Tag arbeiten wir mit Leidenschaft daran, Ihre natürliche Schönheit zu unterstreichen und einzigartige Looks zu kreieren, die Ihre Persönlichkeit widerspiegeln.',
       yearsExperience: 'Jahre Erfahrung',
       satisfiedClients: 'Zufriedene Kunden',
     },
@@ -151,8 +157,10 @@ const translations = {
     location: {
       title: 'Unser Standort',
       phone: 'Telefon',
+      address: 'Adresse',
+      addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
       hours: 'Öffnungszeiten',
-      weekdays: 'Montag bis Freitag: 9:00-18:00',
+      weekdays: 'Montag bis Freitag: 10:00-20:00',
       saturday: 'Samstag: 10:00-14:00',
     },
     footer: {
@@ -171,13 +179,13 @@ const translations = {
       reserve: 'Prenota',
     },
     hero: {
-      title: 'CapJe Ristorante',
-      subtitle: 'Esperienza culinaria unica',
+      title: 'María Lainez Parrucchiere',
+      subtitle: 'Il tuo stile, la nostra passione',
       cta: 'Prenota Ora',
     },
     history: {
       title: 'La Nostra Storia',
-      text: 'CapJe è nato con la visione di offrire ai nostri clienti i migliori marchi e prodotti di qualità. Dai nostri umili inizi, siamo cresciuti fino a diventare un punto di riferimento nel settore, mantenendo sempre il nostro impegno per l\'eccellenza e il servizio clienti. Ogni giorno lavoriamo per superare le aspettative e creare esperienze memorabili.',
+      text: 'María Lainez Parrucchiere è nato con la visione di offrire servizi di parrucchiere di altissima qualità utilizzando i migliori marchi professionali. Dai nostri umili inizi, siamo diventati un punto di riferimento nello styling dei capelli a Puerto Sotogrande, mantenendo sempre il nostro impegno per l\'eccellenza e la soddisfazione del cliente. Ogni giorno lavoriamo con passione per valorizzare la tua bellezza naturale e creare look unici che riflettono la tua personalità.',
       yearsExperience: 'Anni di Esperienza',
       satisfiedClients: 'Clienti Soddisfatti',
     },
@@ -190,8 +198,10 @@ const translations = {
     location: {
       title: 'La Nostra Sede',
       phone: 'Telefono',
+      address: 'Indirizzo',
+      addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
       hours: 'Orari',
-      weekdays: 'Lunedì a Venerdì: 9:00-18:00',
+      weekdays: 'Lunedì a Venerdì: 10:00-20:00',
       saturday: 'Sabato: 10:00-14:00',
     },
     footer: {
@@ -204,28 +214,28 @@ const translations = {
 
 const testimonials = [
   {
-    name: 'María González',
-    text: 'Una experiencia gastronómica excepcional. La atención al detalle y la calidad de los ingredientes son insuperables. ¡Definitivamente volveremos!',
+    name: 'Isabel Martínez',
+    text: 'María es una profesional excepcional. Siempre consigue el look perfecto que tengo en mente. El trato es exquisito y el resultado espectacular. ¡Mi peluquera de confianza!',
     rating: 5,
-    avatar: 'MG',
+    avatar: 'IM',
   },
   {
-    name: 'Carlos Martínez',
-    text: 'El mejor restaurante de la zona sin duda. El ambiente es acogedor y la comida simplemente deliciosa. Muy recomendado.',
+    name: 'Carmen Rodríguez',
+    text: 'La mejor peluquería de Puerto Sotogrande sin duda. Productos de primera calidad y un servicio impecable. Siempre salgo encantada.',
     rating: 5,
-    avatar: 'CM',
+    avatar: 'CR',
   },
   {
-    name: 'Ana López',
-    text: 'Quedé encantada con el servicio y la presentación de cada plato. Una joya culinaria que hay que descubrir.',
+    name: 'Laura Sánchez',
+    text: 'Quedé maravillada con mi nuevo corte y color. María tiene un talento increíble y te hace sentir especial. Totalmente recomendable.',
     rating: 5,
-    avatar: 'AL',
+    avatar: 'LS',
   },
   {
-    name: 'David Fernández',
-    text: 'Excelente relación calidad-precio. El personal es muy atento y profesional. Una experiencia memorable.',
+    name: 'Elena García',
+    text: 'Profesionalidad y calidad garantizadas. Uso productos de las mejores marcas y María sabe exactamente qué necesita tu cabello. Una experiencia de lujo.',
     rating: 5,
-    avatar: 'DF',
+    avatar: 'EG',
   },
 ];
 
@@ -279,7 +289,7 @@ export default function Home() {
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-gray-900">CapJe</div>
+            <img src="/logo.webp" alt="María Lainez Hair Stylist" className="h-12 object-contain" />
             
             <nav className="hidden md:flex items-center gap-6">
               <button
@@ -414,7 +424,7 @@ export default function Home() {
         >
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-8">
-              <div className="text-2xl font-bold text-gray-900">CapJe</div>
+              <img src="/logo.webp" alt="María Lainez Hair Stylist" className="h-10 object-contain" />
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gray-900 p-2"
@@ -488,7 +498,7 @@ export default function Home() {
 
       <main id="home">
         <section className="flex flex-col md:flex-row min-h-[600px]">
-          <div className="md:hidden w-full h-[300px] bg-cover bg-center" style={{ backgroundImage: 'url(/hero-establecimiento.png)' }}></div>
+          <div className="md:hidden w-full h-[300px] bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
           
           <div className="w-full md:w-[65%] bg-black flex items-center justify-center px-8 py-20 md:py-0">
             <div className="text-center text-white max-w-2xl">
@@ -508,7 +518,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="hidden md:block md:w-[35%] bg-cover bg-center" style={{ backgroundImage: 'url(/hero-establecimiento.png)' }}></div>
+          <div className="hidden md:block md:w-[35%] bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)' }}></div>
         </section>
 
         <section className="py-20 bg-gray-50">
@@ -578,7 +588,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div className="order-2 md:order-1">
                 <img
-                  src="/historia-imagen.png"
+                  src="/historia.webp"
                   alt="Nuestra Historia"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
@@ -591,30 +601,30 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <div className="bg-gray-50 rounded-xl p-8 border-2 border-gray-200 hover:border-yellow-400 transition-colors">
+              <div className="bg-black rounded-xl p-8 border-2 border-black hover:border-yellow-400 transition-colors">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-yellow-400 rounded-full p-4">
                     <Calendar className="w-8 h-8 text-gray-900" />
                   </div>
                   <div>
-                    <p className="text-5xl font-bold text-gray-900">25+</p>
+                    <p className="text-5xl font-bold text-white">25+</p>
                   </div>
                 </div>
-                <p className="text-xl font-semibold text-gray-700">
+                <p className="text-xl font-semibold text-white">
                   {t.history.yearsExperience}
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-xl p-8 border-2 border-gray-200 hover:border-yellow-400 transition-colors">
+              <div className="bg-black rounded-xl p-8 border-2 border-black hover:border-yellow-400 transition-colors">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-yellow-400 rounded-full p-4">
                     <Users className="w-8 h-8 text-gray-900" />
                   </div>
                   <div>
-                    <p className="text-5xl font-bold text-gray-900">10,000+</p>
+                    <p className="text-5xl font-bold text-white">10,000+</p>
                   </div>
                 </div>
-                <p className="text-xl font-semibold text-gray-700">
+                <p className="text-xl font-semibold text-white">
                   {t.history.satisfiedClients}
                 </p>
               </div>
@@ -627,25 +637,27 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-center text-white mb-12">
               {t.brands.title}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                { src: '/marca-cafe.png', alt: 'Marca Café' },
-                { src: '/marca-te.png', alt: 'Marca Té' },
-                { src: '/marca-panaderia.png', alt: 'Marca Panadería' },
-                { src: '/marca-restaurante.png', alt: 'Marca Restaurante' },
-              ].map((brand, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg p-8 flex items-center justify-center hover:scale-105 transition-transform duration-300"
-                  style={{ minHeight: '200px' }}
-                >
-                  <img
-                    src={brand.src}
-                    alt={brand.alt}
-                    className="max-w-full max-h-40 object-contain"
-                  />
-                </div>
-              ))}
+            <div className="flex flex-col md:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
+              <div
+                className="bg-white rounded-lg p-8 flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-96"
+                style={{ minHeight: '200px' }}
+              >
+                <img
+                  src="/marca-rica.webp"
+                  alt="RICA"
+                  className="max-w-full max-h-40 object-contain"
+                />
+              </div>
+              <div
+                className="bg-white rounded-lg p-8 flex items-center justify-center hover:scale-105 transition-transform duration-300 w-full md:w-96"
+                style={{ minHeight: '200px' }}
+              >
+                <img
+                  src="/marca-rossety.png"
+                  alt="ROSSETY & SOLÁ BARCELONA"
+                  className="max-w-full max-h-40 object-contain"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -663,11 +675,26 @@ export default function Home() {
                     {t.location.phone}
                   </h3>
                   <a
-                    href="tel:+34912345678"
-                    className="text-lg text-gray-700 hover:text-yellow-600 transition-colors"
+                    href="tel:+34654642299"
+                    className="text-lg text-gray-700 hover:text-yellow-600 transition-colors block"
                   >
-                    +34 912 345 678
+                    +34 654 64 22 99
                   </a>
+                  <a
+                    href="tel:+34956790131"
+                    className="text-lg text-gray-700 hover:text-yellow-600 transition-colors block"
+                  >
+                    +34 956 79 01 31
+                  </a>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {t.location.address}
+                  </h3>
+                  <p className="text-lg text-gray-700">
+                    {t.location.addressText}
+                  </p>
                 </div>
                 
                 <div>
@@ -681,14 +708,14 @@ export default function Home() {
 
               <div className="h-80 bg-gray-200 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48377.675315092675!2d-3.7466947871582027!3d40.416775571365895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890123!5m2!1sen!2ses"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.8469424893956!2d-5.288574!3d36.294767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dc3e4c1c1c1c1%3A0x1c1c1c1c1c1c1c1!2sPlaza%20del%20Agua%2C%20Puerto%20Sotogrande%2C%20San%20Roque%2C%20C%C3%A1diz!5e0!3m2!1sen!2ses!4v1234567890123!5m2!1sen!2ses"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación de CapJe en Madrid"
+                  title="Ubicación de María Lainez Hair Stylist en Puerto Sotogrande"
                 ></iframe>
               </div>
             </div>

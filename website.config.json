@@ -1,15 +1,15 @@
 {
   "site": {
-    "name": "CapJe",
-    "tagline": "Tu destino para calidad y servicio",
-    "description": "Descubre nuestra historia y las mejores marcas de café, té, panadería y restaurante en Madrid.",
+    "name": "María Lainez Hair Stylist",
+    "tagline": "Tu estilo, nuestra pasión",
+    "description": "Servicios profesionales de peluquería en Puerto Sotogrande, San Roque, Cádiz. Utilizamos las mejores marcas: RICA y ROSSETY & SOLÁ BARCELONA.",
     "ogImage": "/og-image.png",
     "twitterHandle": "",
     "contact": {
-      "email": "info@capje.com",
-      "company": "CapJe",
-      "address": "Madrid, España",
-      "phone": "+34 912 345 678"
+      "email": "info@marialainez.com",
+      "company": "María Lainez Hair Stylist",
+      "address": "Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz",
+      "phone": "+34 654 64 22 99"
     },
     "legal": {
       "privacyPolicy": "/privacy",
