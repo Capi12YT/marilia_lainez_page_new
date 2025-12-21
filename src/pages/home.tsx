@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Facebook, Instagram, ChevronLeft, ChevronRight, Star, Menu, X, Globe, Calendar, Users } from 'lucide-react';
+import { Instagram, ChevronLeft, ChevronRight, Star, Menu, X, Globe, Calendar, Users } from 'lucide-react';
 
 type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
@@ -37,9 +37,17 @@ const translations = {
       phone: 'Teléfono',
       address: 'Dirección',
       addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
-      hours: 'Horario',
-      weekdays: 'Lunes a Viernes: 10:00-20:00',
-      saturday: 'Sábado: 10:00-14:00',
+      hours: 'Horario de apertura',
+      monday: 'Lunes',
+      tuesday: 'Martes',
+      wednesday: 'Miércoles',
+      thursday: 'Jueves',
+      friday: 'Viernes',
+      saturday: 'Sábado',
+      sunday: 'Domingo',
+      closed: 'Cerrado',
+      time1: '10:00 - 18:00',
+      time2: '10:00 - 14:00',
     },
     footer: {
       designed: 'Diseñado por CapJe © 2026',
@@ -79,9 +87,17 @@ const translations = {
       phone: 'Phone',
       address: 'Address',
       addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
-      hours: 'Hours',
-      weekdays: 'Monday to Friday: 10:00-20:00',
-      saturday: 'Saturday: 10:00-14:00',
+      hours: 'Opening Hours',
+      monday: 'Monday',
+      tuesday: 'Tuesday',
+      wednesday: 'Wednesday',
+      thursday: 'Thursday',
+      friday: 'Friday',
+      saturday: 'Saturday',
+      sunday: 'Sunday',
+      closed: 'Closed',
+      time1: '10:00 - 18:00',
+      time2: '10:00 - 14:00',
     },
     footer: {
       designed: 'Designed by CapJe © 2026',
@@ -121,9 +137,17 @@ const translations = {
       phone: 'Téléphone',
       address: 'Adresse',
       addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
-      hours: 'Horaires',
-      weekdays: 'Lundi au Vendredi: 10:00-20:00',
-      saturday: 'Samedi: 10:00-14:00',
+      hours: 'Heures d\'ouverture',
+      monday: 'Lundi',
+      tuesday: 'Mardi',
+      wednesday: 'Mercredi',
+      thursday: 'Jeudi',
+      friday: 'Vendredi',
+      saturday: 'Samedi',
+      sunday: 'Dimanche',
+      closed: 'Fermé',
+      time1: '10:00 - 18:00',
+      time2: '10:00 - 14:00',
     },
     footer: {
       designed: 'Conçu par CapJe © 2026',
@@ -164,8 +188,16 @@ const translations = {
       address: 'Adresse',
       addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
       hours: 'Öffnungszeiten',
-      weekdays: 'Montag bis Freitag: 10:00-20:00',
-      saturday: 'Samstag: 10:00-14:00',
+      monday: 'Montag',
+      tuesday: 'Dienstag',
+      wednesday: 'Mittwoch',
+      thursday: 'Donnerstag',
+      friday: 'Freitag',
+      saturday: 'Samstag',
+      sunday: 'Sonntag',
+      closed: 'Geschlossen',
+      time1: '10:00 - 18:00',
+      time2: '10:00 - 14:00',
     },
     footer: {
       designed: 'Entworfen von CapJe © 2026',
@@ -205,9 +237,17 @@ const translations = {
       phone: 'Telefono',
       address: 'Indirizzo',
       addressText: 'Plaza del Agua, Puerto Sotogrande, C.P 11.310, San Roque, Cádiz',
-      hours: 'Orari',
-      weekdays: 'Lunedì a Venerdì: 10:00-20:00',
-      saturday: 'Sabato: 10:00-14:00',
+      hours: 'Orari di apertura',
+      monday: 'Lunedì',
+      tuesday: 'Martedì',
+      wednesday: 'Mercoledì',
+      thursday: 'Giovedì',
+      friday: 'Venerdì',
+      saturday: 'Sabato',
+      sunday: 'Domenica',
+      closed: 'Chiuso',
+      time1: '10:00 - 18:00',
+      time2: '10:00 - 14:00',
     },
     footer: {
       designed: 'Progettato da CapJe © 2026',
@@ -331,7 +371,7 @@ export default function Home() {
 
             <div className="hidden md:flex items-center gap-4">
               <Button
-                className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-semibold px-6"
+                className="bg-black text-white hover:bg-gray-800 font-semibold px-6"
                 onClick={() => scrollToSection('ubicacion')}
               >
                 {t.nav.reserve}
@@ -473,7 +513,7 @@ export default function Home() {
             </nav>
 
             <Button
-              className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-semibold w-full mb-8"
+              className="bg-black text-white hover:bg-gray-800 font-semibold w-full mb-8"
               onClick={() => scrollToSection('ubicacion')}
             >
               {t.nav.reserve}
@@ -709,11 +749,39 @@ export default function Home() {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     {t.location.hours}
                   </h3>
-                  <p className="text-lg text-gray-700">{t.location.weekdays}</p>
-                  <p className="text-lg text-gray-700">{t.location.saturday}</p>
+                  <div className="space-y-2 text-lg">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-500 font-medium">{t.location.monday}:</span>
+                      <span className="text-red-600 font-semibold">{t.location.closed}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-900 font-medium">{t.location.tuesday}:</span>
+                      <span className="text-gray-700">{t.location.time1}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-900 font-medium">{t.location.wednesday}:</span>
+                      <span className="text-gray-700">{t.location.time1}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-900 font-medium">{t.location.thursday}:</span>
+                      <span className="text-gray-700">{t.location.time1}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-900 font-medium">{t.location.friday}:</span>
+                      <span className="text-gray-700">{t.location.time1}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-900 font-medium">{t.location.saturday}:</span>
+                      <span className="text-gray-700">{t.location.time2}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-500 font-medium">{t.location.sunday}:</span>
+                      <span className="text-red-600 font-semibold">{t.location.closed}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -759,16 +827,7 @@ export default function Home() {
             
             <div className="flex items-center gap-4">
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-900 hover:text-gray-700 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={24} />
-              </a>
-              <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/marialainezhairstylist/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-900 hover:text-gray-700 transition-colors"
