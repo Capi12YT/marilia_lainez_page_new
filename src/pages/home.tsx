@@ -7,11 +7,10 @@ type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 const translations = {
   ES: {
     nav: {
-      home: 'Inicio',
       about: 'Nosotros',
       services: 'Servicios',
       brands: 'Marcas',
-      contact: 'Contacto',
+      contact: 'Ubicación/Horario',
       reserve: 'Reservar',
     },
     hero: {
@@ -57,11 +56,10 @@ const translations = {
   },
   EN: {
     nav: {
-      home: 'Home',
       about: 'About Us',
       services: 'Services',
       brands: 'Brands',
-      contact: 'Contact',
+      contact: 'Location/Hours',
       reserve: 'Book Now',
     },
     hero: {
@@ -107,11 +105,10 @@ const translations = {
   },
   FR: {
     nav: {
-      home: 'Accueil',
       about: 'À propos',
       services: 'Services',
       brands: 'Marques',
-      contact: 'Contact',
+      contact: 'Localisation/Horaires',
       reserve: 'Réserver',
     },
     hero: {
@@ -157,11 +154,10 @@ const translations = {
   },
   DE: {
     nav: {
-      home: 'Start',
       about: 'Über uns',
       services: 'Dienstleistungen',
       brands: 'Marken',
-      contact: 'Kontakt',
+      contact: 'Standort/Öffnungszeiten',
       reserve: 'Reservieren',
     },
     hero: {
@@ -207,11 +203,10 @@ const translations = {
   },
   IT: {
     nav: {
-      home: 'Home',
       about: 'Chi Siamo',
       services: 'Servizi',
       brands: 'Marchi',
-      contact: 'Contatto',
+      contact: 'Posizione/Orari',
       reserve: 'Prenota',
     },
     hero: {
@@ -300,6 +295,11 @@ export default function Home() {
     setMobileMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
     setLangDropdownOpen(false);
@@ -334,15 +334,15 @@ export default function Home() {
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <img src="/logo-m.png" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full" />
+            <button 
+              onClick={scrollToTop}
+              className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
+              aria-label="Ir al inicio"
+            >
+              <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full cursor-pointer" />
+            </button>
             
             <nav className="hidden md:flex items-center gap-6">
-              <button
-                onClick={() => scrollToSection('home')}
-                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
-              >
-                {t.nav.home}
-              </button>
               <button
                 onClick={() => scrollToSection('historia')}
                 className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
@@ -469,7 +469,13 @@ export default function Home() {
         >
           <div className="flex flex-col h-full p-6">
             <div className="flex items-center justify-between mb-8">
-              <img src="/logo-m.png" alt="María Lainez Hair Stylist" className="h-10 w-10 object-cover rounded-full" />
+              <button 
+                onClick={scrollToTop}
+                className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
+                aria-label="Ir al inicio"
+              >
+                <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-10 w-10 object-cover rounded-full cursor-pointer" />
+              </button>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gray-900 p-2"
@@ -480,12 +486,6 @@ export default function Home() {
             </div>
 
             <nav className="flex flex-col gap-4 mb-8">
-              <button
-                onClick={() => scrollToSection('home')}
-                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
-              >
-                {t.nav.home}
-              </button>
               <button
                 onClick={() => scrollToSection('historia')}
                 className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
@@ -719,7 +719,7 @@ export default function Home() {
               {t.location.title}
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="grid md:grid-cols-2 gap-8 mb-8 md:items-start">
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -785,11 +785,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="h-80 bg-gray-200 rounded-lg overflow-hidden">
+              <div className="bg-gray-200 rounded-lg overflow-hidden" style={{ minHeight: '500px' }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.642022879685!2d-5.27386742374792!3d36.29153689620704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0cc5f08ac3e69b%3A0xcfbcef2309f27000!2sMar%C3%ADa%20Lainez%20Hair%20Stylist%20Sotogrande!5e1!3m2!1ses!2ses!4v1766315224338!5m2!1ses!2ses"
                   width="100%"
-                  height="100%"
+                  height="500"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
