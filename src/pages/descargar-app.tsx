@@ -196,7 +196,7 @@ export default function DescargarApp() {
   const featureIcons = [Calendar, Clock, Bell, Star];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen flex flex-col bg-white">
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -387,7 +387,8 @@ export default function DescargarApp() {
         </div>
       </header>
 
-      <div className="bg-gradient-to-br from-gray-50 via-yellow-50 to-gray-100">
+      <main className="flex-1">
+        <div className="bg-gradient-to-br from-gray-50 via-yellow-50 to-gray-100">
         <div className="container mx-auto px-4 py-20">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -515,6 +516,7 @@ export default function DescargarApp() {
           </div>
         </div>
       </div>
+      </main>
 
       <footer className="bg-yellow-400 py-8">
         <div className="container mx-auto px-4">
@@ -542,7 +544,9 @@ export default function DescargarApp() {
         </div>
       </footer>
 
-      <div className="elfsight-app-5dc44478-8a64-4d4b-9d84-4fc7e17f9b8f" data-elfsight-app-lazy></div>
+      <div className="fixed bottom-0 right-0 z-40 pointer-events-none">
+        <div className="elfsight-app-5dc44478-8a64-4d4b-9d84-4fc7e17f9b8f pointer-events-auto" data-elfsight-app-lazy></div>
+      </div>
     </div>
   );
 }

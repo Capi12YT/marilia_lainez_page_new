@@ -715,7 +715,9 @@ export default function ReservasApp() {
         </div>
       </footer>
 
-      <div className="elfsight-app-2a85dfb5-5da4-4d3a-8c50-bdac5b091bb5" data-elfsight-app-lazy></div>
+      <div className="fixed bottom-0 right-0 z-40 pointer-events-none">
+        <div className="elfsight-app-2a85dfb5-5da4-4d3a-8c50-bdac5b091bb5 pointer-events-auto" data-elfsight-app-lazy></div>
+      </div>
     </div>
   );
 }

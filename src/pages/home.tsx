@@ -290,7 +290,7 @@ export default function Home() {
   }, [langDropdownOpen]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen flex flex-col bg-white">
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -503,7 +503,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main id="home">
+      <main id="home" className="flex-1">
         <section className="flex flex-col xl:flex-row h-[calc(100vh-64px)]">
           <div className="xl:hidden w-full h-1/2 bg-cover bg-center" style={{ backgroundImage: 'url(/hero.webp)', backgroundPosition: 'left top' }}></div>
           
@@ -761,8 +761,10 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      <div className="elfsight-app-5dc44478-8a64-4d4b-9d84-4fc7e17f9b8f" data-elfsight-app-lazy></div>
+      
+      <div className="fixed bottom-0 right-0 z-40 pointer-events-none">
+        <div className="elfsight-app-5dc44478-8a64-4d4b-9d84-4fc7e17f9b8f pointer-events-auto" data-elfsight-app-lazy></div>
+      </div>
     </div>
   );
 }
