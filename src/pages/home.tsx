@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Instagram, ChevronLeft, ChevronRight, Star, Menu, X, Globe, Calendar, Users } from 'lucide-react';
+import { Instagram, Menu, X, Globe, Calendar, Users } from 'lucide-react';
 
 type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
@@ -247,36 +247,8 @@ const translations = {
   },
 };
 
-const testimonials = [
-  {
-    name: 'Isabel Martínez',
-    text: 'María es una profesional excepcional. Siempre consigue el look perfecto que tengo en mente. El trato es exquisito y el resultado espectacular. ¡Mi peluquera de confianza!',
-    rating: 5,
-    avatar: 'IM',
-  },
-  {
-    name: 'Carmen Rodríguez',
-    text: 'La mejor peluquería de Puerto Sotogrande sin duda. Productos de primera calidad y un servicio impecable. Siempre salgo encantada.',
-    rating: 5,
-    avatar: 'CR',
-  },
-  {
-    name: 'Laura Sánchez',
-    text: 'Quedé maravillada con mi nuevo corte y color. María tiene un talento increíble y te hace sentir especial. Totalmente recomendable.',
-    rating: 5,
-    avatar: 'LS',
-  },
-  {
-    name: 'Elena García',
-    text: 'Profesionalidad y calidad garantizadas. Uso productos de las mejores marcas y María sabe exactamente qué necesita tu cabello. Una experiencia de lujo.',
-    rating: 5,
-    avatar: 'EG',
-  },
-];
-
 export default function Home() {
   const [language, setLanguage] = useState<Language>('ES');
-  const [currentReview, setCurrentReview] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -315,14 +287,6 @@ export default function Home() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [langDropdownOpen]);
-
-  const nextReview = () => {
-    setCurrentReview((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevReview = () => {
-    setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -573,61 +537,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="reviews" className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section id="reviews" className="py-20 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
               {t.reviews.title}
             </h2>
             
-            <div className="relative bg-white rounded-lg shadow-xl p-8 md:p-12">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold text-2xl mb-6">
-                  {testimonials[currentReview].avatar}
-                </div>
-                
-                <div className="flex gap-1 mb-6">
-                  {[...Array(testimonials[currentReview].rating)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                
-                <p className="text-lg text-gray-700 mb-6 italic max-w-2xl">
-                  "{testimonials[currentReview].text}"
-                </p>
-                
-                <p className="text-xl font-semibold text-gray-900">
-                  {testimonials[currentReview].name}
-                </p>
-              </div>
-              
-              <button
-                onClick={prevReview}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 p-2 rounded-full shadow-lg transition-colors"
-                aria-label="Previous review"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              
-              <button
-                onClick={nextReview}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 p-2 rounded-full shadow-lg transition-colors"
-                aria-label="Next review"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-              
-              <div className="flex justify-center gap-2 mt-8">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentReview(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentReview ? 'bg-yellow-400' : 'bg-gray-300'
-                    }`}
-                    aria-label={`Go to review ${index + 1}`}
-                  />
-                ))}
-              </div>
+            <div className="flex justify-center">
+              <div className="elfsight-app-5443c9fc-9ef5-44d6-87f5-0a2790a260be" data-elfsight-app-lazy></div>
             </div>
           </div>
         </section>
