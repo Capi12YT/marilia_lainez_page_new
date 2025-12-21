@@ -803,29 +803,26 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-yellow-400 py-8">
+      <footer className="bg-yellow-400 py-10">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex flex-col items-center md:items-start gap-2">
-              <p className="text-gray-900 font-bold text-lg">
-                {t.footer.brandName}
-              </p>
-              <p className="text-gray-900 font-medium text-sm">
-                {t.footer.designed}
-              </p>
-            </div>
+          <div className="flex flex-col items-center justify-center gap-4 text-center">
+            <p className="text-gray-900 font-bold text-xl">
+              {t.footer.brandName}
+            </p>
             
-            <div className="flex items-center gap-4">
-              <a
-                href="https://www.instagram.com/marialainezhairstylist/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-900 hover:text-gray-700 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={24} />
-              </a>
-            </div>
+            <p className="text-gray-900 font-medium text-sm">
+              {t.footer.designed}
+            </p>
+            
+            <a
+              href="https://www.instagram.com/marialainezhairstylist/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-900 hover:text-gray-700 transition-colors mt-2"
+              aria-label="Instagram"
+            >
+              <Instagram size={28} />
+            </a>
           </div>
         </div>
       </footer>
