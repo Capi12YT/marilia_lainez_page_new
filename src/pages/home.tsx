@@ -251,28 +251,6 @@ export default function Home() {
           <div className="hidden md:block md:w-[35%] bg-cover bg-center" style={{ backgroundImage: 'url(/hero-establecimiento.png)' }}></div>
         </section>
 
-        <section id="historia" className="py-20 bg-white">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-              {t.history.title}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
-                <img
-                  src="/historia-imagen.png"
-                  alt="Nuestra Historia"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </div>
-              <div className="order-1 md:order-2">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  {t.history.text}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
@@ -327,6 +305,28 @@ export default function Home() {
                     aria-label={`Go to review ${index + 1}`}
                   />
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="historia" className="py-20 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+              {t.history.title}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <img
+                  src="/historia-imagen.png"
+                  alt="Nuestra Historia"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="order-1 md:order-2">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {t.history.text}
+                </p>
               </div>
             </div>
           </div>
