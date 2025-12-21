@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import SignIn from "@/pages/sign-in";
 import SignUp from "@/pages/sign-up";
 import DescargarApp from "@/pages/descargar-app";
+import ReservasApp from "@/pages/reservas-app";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export function App() {
@@ -16,6 +17,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/descargar-app" element={<DescargarApp />} />
+        <Route path="/reservas-app" element={<ReservasApp />} />
 
         {/* Authentication routes */}
         <Route path="/signin" element={<SignIn />} />

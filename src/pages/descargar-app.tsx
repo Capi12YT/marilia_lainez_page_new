@@ -220,10 +220,8 @@ export default function DescargarApp() {
                   {t.downloadFor}:
                 </h2>
                 
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/reservas-app"
                   className="flex items-center gap-4 bg-black text-white p-6 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-lg group"
                 >
                   <div className="bg-white rounded-xl p-3">
@@ -241,12 +239,10 @@ export default function DescargarApp() {
                     </div>
                   </div>
                   <Download className="w-6 h-6 opacity-50" />
-                </a>
+                </Link>
 
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/reservas-app"
                   className="flex items-center gap-4 bg-black text-white p-6 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-lg group"
                 >
                   <div className="bg-white rounded-xl p-3">
@@ -261,7 +257,7 @@ export default function DescargarApp() {
                     </div>
                   </div>
                   <Download className="w-6 h-6 opacity-50" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
