@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Facebook, Instagram, ChevronLeft, ChevronRight, Star, Menu, X, Globe } from 'lucide-react';
+import { Facebook, Instagram, ChevronLeft, ChevronRight, Star, Menu, X, Globe, Calendar, Users } from 'lucide-react';
 
 type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
@@ -10,6 +10,7 @@ const translations = {
       home: 'Inicio',
       about: 'Nosotros',
       services: 'Servicios',
+      brands: 'Marcas',
       contact: 'Contacto',
       reserve: 'Reservar',
     },
@@ -21,6 +22,8 @@ const translations = {
     history: {
       title: 'Nuestra Historia',
       text: 'CapJe nació con la visión de ofrecer las mejores marcas y productos de calidad a nuestros clientes. Desde nuestros humildes comienzos, hemos crecido para convertirnos en un referente en el sector, manteniendo siempre nuestro compromiso con la excelencia y el servicio al cliente. Cada día trabajamos para superar las expectativas y crear experiencias memorables.',
+      yearsExperience: 'Años de Experiencia',
+      satisfiedClients: 'Clientes Satisfechos',
     },
     reviews: {
       title: 'Lo Que Dicen Nuestros Clientes',
@@ -46,6 +49,7 @@ const translations = {
       home: 'Home',
       about: 'About Us',
       services: 'Services',
+      brands: 'Brands',
       contact: 'Contact',
       reserve: 'Book Now',
     },
@@ -57,6 +61,8 @@ const translations = {
     history: {
       title: 'Our Story',
       text: 'CapJe was born with the vision of offering the best brands and quality products to our customers. From our humble beginnings, we have grown to become a benchmark in the sector, always maintaining our commitment to excellence and customer service. Every day we work to exceed expectations and create memorable experiences.',
+      yearsExperience: 'Years of Experience',
+      satisfiedClients: 'Satisfied Clients',
     },
     reviews: {
       title: 'What Our Customers Say',
@@ -82,6 +88,7 @@ const translations = {
       home: 'Accueil',
       about: 'À propos',
       services: 'Services',
+      brands: 'Marques',
       contact: 'Contact',
       reserve: 'Réserver',
     },
@@ -93,6 +100,8 @@ const translations = {
     history: {
       title: 'Notre Histoire',
       text: "CapJe est né avec la vision d'offrir les meilleures marques et produits de qualité à nos clients. Depuis nos modestes débuts, nous sommes devenus une référence dans le secteur, en maintenant toujours notre engagement envers l'excellence et le service client. Chaque jour, nous travaillons pour dépasser les attentes et créer des expériences mémorables.",
+      yearsExperience: 'Ans d\'Expérience',
+      satisfiedClients: 'Clients Satisfaits',
     },
     reviews: {
       title: 'Ce Que Disent Nos Clients',
@@ -118,6 +127,7 @@ const translations = {
       home: 'Start',
       about: 'Über uns',
       services: 'Dienstleistungen',
+      brands: 'Marken',
       contact: 'Kontakt',
       reserve: 'Reservieren',
     },
@@ -129,6 +139,8 @@ const translations = {
     history: {
       title: 'Unsere Geschichte',
       text: 'CapJe wurde mit der Vision gegründet, unseren Kunden die besten Marken und Qualitätsprodukte anzubieten. Von unseren bescheidenen Anfängen an sind wir zu einem Maßstab in der Branche geworden und haben dabei stets unser Engagement für Exzellenz und Kundenservice beibehalten. Jeden Tag arbeiten wir daran, Erwartungen zu übertreffen und unvergessliche Erlebnisse zu schaffen.',
+      yearsExperience: 'Jahre Erfahrung',
+      satisfiedClients: 'Zufriedene Kunden',
     },
     reviews: {
       title: 'Was Unsere Kunden Sagen',
@@ -154,6 +166,7 @@ const translations = {
       home: 'Home',
       about: 'Chi Siamo',
       services: 'Servizi',
+      brands: 'Marchi',
       contact: 'Contatto',
       reserve: 'Prenota',
     },
@@ -165,6 +178,8 @@ const translations = {
     history: {
       title: 'La Nostra Storia',
       text: 'CapJe è nato con la visione di offrire ai nostri clienti i migliori marchi e prodotti di qualità. Dai nostri umili inizi, siamo cresciuti fino a diventare un punto di riferimento nel settore, mantenendo sempre il nostro impegno per l\'eccellenza e il servizio clienti. Ogni giorno lavoriamo per superare le aspettative e creare esperienze memorabili.',
+      yearsExperience: 'Anni di Esperienza',
+      satisfiedClients: 'Clienti Soddisfatti',
     },
     reviews: {
       title: 'Cosa Dicono I Nostri Clienti',
@@ -286,6 +301,12 @@ export default function Home() {
                 {t.nav.services}
               </button>
               <button
+                onClick={() => scrollToSection('marcas')}
+                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+              >
+                {t.nav.brands}
+              </button>
+              <button
                 onClick={() => scrollToSection('ubicacion')}
                 className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
               >
@@ -295,7 +316,7 @@ export default function Home() {
 
             <div className="hidden md:flex items-center gap-4">
               <Button
-                className="bg-gray-900 text-white hover:bg-gray-800 font-semibold px-6"
+                className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-semibold px-6"
                 onClick={() => scrollToSection('ubicacion')}
               >
                 {t.nav.reserve}
@@ -423,6 +444,12 @@ export default function Home() {
                 {t.nav.services}
               </button>
               <button
+                onClick={() => scrollToSection('marcas')}
+                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
+              >
+                {t.nav.brands}
+              </button>
+              <button
                 onClick={() => scrollToSection('ubicacion')}
                 className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
               >
@@ -431,7 +458,7 @@ export default function Home() {
             </nav>
 
             <Button
-              className="bg-gray-900 text-white hover:bg-gray-800 font-semibold w-full mb-8"
+              className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 font-semibold w-full mb-8"
               onClick={() => scrollToSection('ubicacion')}
             >
               {t.nav.reserve}
@@ -548,7 +575,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
               {t.history.title}
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div className="order-2 md:order-1">
                 <img
                   src="/historia-imagen.png"
@@ -562,10 +589,40 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mt-12">
+              <div className="bg-gray-50 rounded-xl p-8 border-2 border-gray-200 hover:border-yellow-400 transition-colors">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-yellow-400 rounded-full p-4">
+                    <Calendar className="w-8 h-8 text-gray-900" />
+                  </div>
+                  <div>
+                    <p className="text-5xl font-bold text-gray-900">25+</p>
+                  </div>
+                </div>
+                <p className="text-xl font-semibold text-gray-700">
+                  {t.history.yearsExperience}
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-8 border-2 border-gray-200 hover:border-yellow-400 transition-colors">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-yellow-400 rounded-full p-4">
+                    <Users className="w-8 h-8 text-gray-900" />
+                  </div>
+                  <div>
+                    <p className="text-5xl font-bold text-gray-900">10,000+</p>
+                  </div>
+                </div>
+                <p className="text-xl font-semibold text-gray-700">
+                  {t.history.satisfiedClients}
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="marcas" className="py-20 bg-gray-900">
+        <section id="marcas" className="py-20 bg-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold text-center text-white mb-12">
               {t.brands.title}
