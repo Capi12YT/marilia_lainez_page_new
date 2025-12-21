@@ -720,26 +720,32 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-yellow-400 py-10">
+      <footer className="bg-yellow-400 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center justify-center gap-4 text-center">
-            <p className="text-gray-900 font-bold text-xl">
-              {t.footer.brandName}
-            </p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-center md:text-left">
+            <div className="md:flex-1">
+              <p className="text-gray-900 font-medium text-sm">
+                {t.footer.designed}
+              </p>
+            </div>
             
-            <p className="text-gray-900 font-medium text-sm">
-              {t.footer.designed}
-            </p>
+            <div className="md:flex-1 md:text-center">
+              <p className="text-gray-900 font-bold text-lg">
+                {t.footer.brandName}
+              </p>
+            </div>
             
-            <a
-              href="https://www.instagram.com/marialainezhairstylist/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-900 hover:text-gray-700 transition-colors mt-2"
-              aria-label="Instagram"
-            >
-              <Instagram size={28} />
-            </a>
+            <div className="md:flex-1 flex justify-center md:justify-end">
+              <a
+                href="https://www.instagram.com/marialainezhairstylist/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-900 hover:text-gray-700 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={28} />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
