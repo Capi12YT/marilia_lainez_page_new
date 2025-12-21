@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Facebook, Instagram, ChevronLeft, ChevronRight, Star, Menu, X } from 'lucide-react';
+import { Facebook, Instagram, ChevronLeft, ChevronRight, Star, Menu, X, Globe } from 'lucide-react';
 
 type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
@@ -218,6 +218,8 @@ export default function Home() {
   const [language, setLanguage] = useState<Language>('ES');
   const [currentReview, setCurrentReview] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const t = translations[language];
 
   const scrollToSection = (id: string) => {
@@ -227,6 +229,27 @@ export default function Home() {
     }
     setMobileMenuOpen(false);
   };
+
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    setLangDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setLangDropdownOpen(false);
+      }
+    };
+
+    if (langDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [langDropdownOpen]);
 
   const nextReview = () => {
     setCurrentReview((prev) => (prev + 1) % testimonials.length);
@@ -278,20 +301,71 @@ export default function Home() {
                 {t.nav.reserve}
               </Button>
               
-              <div className="flex items-center gap-1 bg-white rounded-md p-1">
-                {(['ES', 'EN', 'FR', 'DE', 'IT'] as Language[]).map((lang) => (
+              <div className="relative" ref={dropdownRef}>
+                <div className="flex items-center gap-2 bg-white rounded-md p-1">
                   <button
-                    key={lang}
-                    onClick={() => setLanguage(lang)}
+                    onClick={() => handleLanguageChange('ES')}
                     className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                      language === lang
+                      language === 'ES'
                         ? 'bg-yellow-400 text-gray-900'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    {lang}
+                    ES
                   </button>
-                ))}
+                  <button
+                    onClick={() => handleLanguageChange('EN')}
+                    className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                      language === 'EN'
+                        ? 'bg-yellow-400 text-gray-900'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    EN
+                  </button>
+                  <button
+                    onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                    className="px-2 py-1 text-gray-600 hover:text-gray-900 transition-colors"
+                    aria-label="More languages"
+                  >
+                    <Globe className="w-4 h-4" />
+                  </button>
+                </div>
+
+                {langDropdownOpen && (
+                  <div className="absolute top-full right-0 mt-2 bg-white rounded-md shadow-lg p-1 z-50 min-w-[100px] animate-in fade-in slide-in-from-top-2 duration-200">
+                    <button
+                      onClick={() => handleLanguageChange('FR')}
+                      className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                        language === 'FR'
+                          ? 'bg-yellow-400 text-gray-900'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      FR
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange('DE')}
+                      className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                        language === 'DE'
+                          ? 'bg-yellow-400 text-gray-900'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      DE
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange('IT')}
+                      className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                        language === 'IT'
+                          ? 'bg-yellow-400 text-gray-900'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      IT
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
 
