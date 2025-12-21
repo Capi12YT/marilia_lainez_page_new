@@ -1,14 +1,15 @@
 {
   "site": {
-    "name": "Minimal Starter",
-    "tagline": "Your Creative Canvas",
-    "description": "A clean, minimal starter template providing the perfect foundation for your next project. Built with modern tools and ready for your creativity.",
+    "name": "CapJe",
+    "tagline": "Tu destino para calidad y servicio",
+    "description": "Descubre nuestra historia y las mejores marcas de café, té, panadería y restaurante en Madrid.",
     "ogImage": "/og-image.png",
     "twitterHandle": "",
     "contact": {
-      "email": "contact@example.com",
-      "company": "Your Company",
-      "address": ""
+      "email": "info@capje.com",
+      "company": "CapJe",
+      "address": "Madrid, España",
+      "phone": "+34 912 345 678"
     },
     "legal": {
       "privacyPolicy": "/privacy",
@@ -16,6 +17,6 @@
     }
   },
   "theme": {
-    "defaultTheme": "dark"
+    "defaultTheme": "light"
   }
 }
