@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Facebook, Instagram, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Facebook, Instagram, ChevronLeft, ChevronRight, Star, Menu, X } from 'lucide-react';
 
-type Language = 'ES' | 'EN' | 'FR';
+type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
 const translations = {
   ES: {
@@ -113,6 +113,78 @@ const translations = {
       privacy: 'Politique de Confidentialité',
     },
   },
+  DE: {
+    nav: {
+      home: 'Start',
+      about: 'Über uns',
+      services: 'Dienstleistungen',
+      contact: 'Kontakt',
+      reserve: 'Reservieren',
+    },
+    hero: {
+      title: 'CapJe Restaurant',
+      subtitle: 'Einzigartiges kulinarisches Erlebnis',
+      cta: 'Jetzt Reservieren',
+    },
+    history: {
+      title: 'Unsere Geschichte',
+      text: 'CapJe wurde mit der Vision gegründet, unseren Kunden die besten Marken und Qualitätsprodukte anzubieten. Von unseren bescheidenen Anfängen an sind wir zu einem Maßstab in der Branche geworden und haben dabei stets unser Engagement für Exzellenz und Kundenservice beibehalten. Jeden Tag arbeiten wir daran, Erwartungen zu übertreffen und unvergessliche Erlebnisse zu schaffen.',
+    },
+    reviews: {
+      title: 'Was Unsere Kunden Sagen',
+    },
+    brands: {
+      title: 'Unsere Marken',
+    },
+    location: {
+      title: 'Unser Standort',
+      phone: 'Telefon',
+      hours: 'Öffnungszeiten',
+      weekdays: 'Montag bis Freitag: 9:00-18:00',
+      saturday: 'Samstag: 10:00-14:00',
+    },
+    footer: {
+      designed: 'Entworfen von CapJe © 2026',
+      legal: 'Impressum',
+      privacy: 'Datenschutz',
+    },
+  },
+  IT: {
+    nav: {
+      home: 'Home',
+      about: 'Chi Siamo',
+      services: 'Servizi',
+      contact: 'Contatto',
+      reserve: 'Prenota',
+    },
+    hero: {
+      title: 'CapJe Ristorante',
+      subtitle: 'Esperienza culinaria unica',
+      cta: 'Prenota Ora',
+    },
+    history: {
+      title: 'La Nostra Storia',
+      text: 'CapJe è nato con la visione di offrire ai nostri clienti i migliori marchi e prodotti di qualità. Dai nostri umili inizi, siamo cresciuti fino a diventare un punto di riferimento nel settore, mantenendo sempre il nostro impegno per l\'eccellenza e il servizio clienti. Ogni giorno lavoriamo per superare le aspettative e creare esperienze memorabili.',
+    },
+    reviews: {
+      title: 'Cosa Dicono I Nostri Clienti',
+    },
+    brands: {
+      title: 'I Nostri Marchi',
+    },
+    location: {
+      title: 'La Nostra Sede',
+      phone: 'Telefono',
+      hours: 'Orari',
+      weekdays: 'Lunedì a Venerdì: 9:00-18:00',
+      saturday: 'Sabato: 10:00-14:00',
+    },
+    footer: {
+      designed: 'Progettato da CapJe © 2026',
+      legal: 'Note Legali',
+      privacy: 'Informativa sulla Privacy',
+    },
+  },
 };
 
 const testimonials = [
@@ -145,6 +217,7 @@ const testimonials = [
 export default function Home() {
   const [language, setLanguage] = useState<Language>('ES');
   const [currentReview, setCurrentReview] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[language];
 
   const scrollToSection = (id: string) => {
@@ -152,6 +225,7 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setMobileMenuOpen(false);
   };
 
   const nextReview = () => {
@@ -167,38 +241,36 @@ export default function Home() {
       <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-8">
-              <div className="text-2xl font-bold text-gray-900">CapJe</div>
-              
-              <nav className="hidden md:flex items-center gap-6">
-                <button
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
-                >
-                  {t.nav.home}
-                </button>
-                <button
-                  onClick={() => scrollToSection('historia')}
-                  className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
-                >
-                  {t.nav.about}
-                </button>
-                <button
-                  onClick={() => scrollToSection('marcas')}
-                  className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
-                >
-                  {t.nav.services}
-                </button>
-                <button
-                  onClick={() => scrollToSection('ubicacion')}
-                  className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
-                >
-                  {t.nav.contact}
-                </button>
-              </nav>
-            </div>
+            <div className="text-2xl font-bold text-gray-900">CapJe</div>
+            
+            <nav className="hidden md:flex items-center gap-6">
+              <button
+                onClick={() => scrollToSection('home')}
+                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+              >
+                {t.nav.home}
+              </button>
+              <button
+                onClick={() => scrollToSection('historia')}
+                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+              >
+                {t.nav.about}
+              </button>
+              <button
+                onClick={() => scrollToSection('marcas')}
+                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+              >
+                {t.nav.services}
+              </button>
+              <button
+                onClick={() => scrollToSection('ubicacion')}
+                className="text-gray-900 hover:text-gray-700 font-medium transition-colors"
+              >
+                {t.nav.contact}
+              </button>
+            </nav>
 
-            <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4">
               <Button
                 className="bg-gray-900 text-white hover:bg-gray-800 font-semibold px-6"
                 onClick={() => scrollToSection('ubicacion')}
@@ -207,7 +279,7 @@ export default function Home() {
               </Button>
               
               <div className="flex items-center gap-1 bg-white rounded-md p-1">
-                {(['ES', 'EN', 'FR'] as Language[]).map((lang) => (
+                {(['ES', 'EN', 'FR', 'DE', 'IT'] as Language[]).map((lang) => (
                   <button
                     key={lang}
                     onClick={() => setLanguage(lang)}
@@ -215,6 +287,93 @@ export default function Home() {
                       language === lang
                         ? 'bg-yellow-400 text-gray-900'
                         : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    {lang}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <button
+              className="md:hidden text-gray-900 p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity md:hidden ${
+            mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+
+        <div
+          className={`fixed top-0 right-0 h-full w-80 bg-yellow-400 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="flex flex-col h-full p-6">
+            <div className="flex items-center justify-between mb-8">
+              <div className="text-2xl font-bold text-gray-900">CapJe</div>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gray-900 p-2"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-4 mb-8">
+              <button
+                onClick={() => scrollToSection('home')}
+                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
+              >
+                {t.nav.home}
+              </button>
+              <button
+                onClick={() => scrollToSection('historia')}
+                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
+              >
+                {t.nav.about}
+              </button>
+              <button
+                onClick={() => scrollToSection('marcas')}
+                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
+              >
+                {t.nav.services}
+              </button>
+              <button
+                onClick={() => scrollToSection('ubicacion')}
+                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
+              >
+                {t.nav.contact}
+              </button>
+            </nav>
+
+            <Button
+              className="bg-gray-900 text-white hover:bg-gray-800 font-semibold w-full mb-8"
+              onClick={() => scrollToSection('ubicacion')}
+            >
+              {t.nav.reserve}
+            </Button>
+
+            <div className="border-t border-gray-900/20 pt-6">
+              <p className="text-sm font-medium text-gray-900 mb-3">Idioma / Language</p>
+              <div className="grid grid-cols-3 gap-2">
+                {(['ES', 'EN', 'FR', 'DE', 'IT'] as Language[]).map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => setLanguage(lang)}
+                    className={`px-3 py-2 rounded text-sm font-medium transition-colors ${
+                      language === lang
+                        ? 'bg-gray-900 text-white'
+                        : 'bg-white text-gray-900 hover:bg-gray-100'
                     }`}
                   >
                     {lang}
