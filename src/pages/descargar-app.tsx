@@ -2,6 +2,7 @@ import { Smartphone, Check, Calendar, Clock, Bell, Star, Instagram, Menu, X, Glo
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 
 type Language = 'es' | 'en' | 'fr' | 'de' | 'it';
 
@@ -498,9 +499,7 @@ export default function DescargarApp() {
         </div>
       </footer>
 
-      <div className="fixed bottom-0 right-0 z-40 pointer-events-none">
-        <div className="elfsight-app-5dc44478-8a64-4d4b-9d84-4fc7e17f9b8f pointer-events-auto" data-elfsight-app-lazy></div>
-      </div>
+      <WhatsAppButton />
     </div>
   );
 }

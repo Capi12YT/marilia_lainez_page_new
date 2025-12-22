@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Instagram, Menu, X, Globe, Calendar, Users } from 'lucide-react';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 
 type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
@@ -549,8 +550,99 @@ export default function Home() {
             <div className="flex justify-center mb-12">
               <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
             </div>
-            <div className="flex justify-center">
-              <div className="elfsight-app-5443c9fc-9ef5-44d6-87f5-0a2790a260be" data-elfsight-app-lazy></div>
+            
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
+                      IC
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="font-bold text-gray-900">Isabel Castro</h3>
+                      <div className="flex text-yellow-400">
+                        {'★★★★★'.split('').map((star, i) => (
+                          <span key={i}>{star}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "María es simplemente increíble. Llevo años viniendo y siempre salgo encantada. Su atención al detalle y profesionalidad son excepcionales. ¡Totalmente recomendable!"
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
+                      CR
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="font-bold text-gray-900">Carmen Rodríguez</h3>
+                      <div className="flex text-yellow-400">
+                        {'★★★★★'.split('').map((star, i) => (
+                          <span key={i}>{star}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "El mejor salón de Sotogrande sin duda. Los productos que utilizan son de primera calidad y el resultado siempre supera mis expectativas. María es una artista."
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
+                      LS
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="font-bold text-gray-900">Laura Sánchez</h3>
+                      <div className="flex text-yellow-400">
+                        {'★★★★★'.split('').map((star, i) => (
+                          <span key={i}>{star}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "Excelente servicio y ambiente acogedor. María escucha lo que quieres y te asesora profesionalmente. Mis mechas quedaron perfectas. ¡Volveré seguro!"
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
+                      EG
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="font-bold text-gray-900">Elena García</h3>
+                      <div className="flex text-yellow-400">
+                        {'★★★★★'.split('').map((star, i) => (
+                          <span key={i}>{star}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 italic leading-relaxed">
+                    "Trato cercano y profesional. Las marcas que utiliza (RICA y ROSSETY) son de las mejores del mercado. Mi pelo nunca ha estado mejor. 100% recomendable."
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="https://www.google.com/maps/place/Mar%C3%ADa+Lainez+Hair+Stylist+Sotogrande/@36.485976,-5.283662,17z/data=!4m8!3m7!1s0xd0d0e5c89d5b9e1:0x3f4e5a6b7c8d9e0f!8m2!3d36.485976!4d-5.283662!9m1!1b1!16s%2Fg%2F11j8_qm5rt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"/>
+                  </svg>
+                  Ver todas las reseñas en Google
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -762,9 +854,7 @@ export default function Home() {
         </div>
       </footer>
       
-      <div className="fixed bottom-0 right-0 z-40 pointer-events-none">
-        <div className="elfsight-app-5dc44478-8a64-4d4b-9d84-4fc7e17f9b8f pointer-events-auto" data-elfsight-app-lazy></div>
-      </div>
+      <WhatsAppButton />
     </div>
   );
 }
