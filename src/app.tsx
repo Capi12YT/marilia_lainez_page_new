@@ -9,6 +9,15 @@ import SignIn from "@/pages/sign-in";
 import SignUp from "@/pages/sign-up";
 import DescargarApp from "@/pages/descargar-app";
 import ReservasApp from "@/pages/reservas-app";
+import Alisados from "@/pages/alisados";
+import Highlights from "@/pages/servicios/highlights";
+import Balayages from "@/pages/servicios/balayages";
+import Color from "@/pages/servicios/color";
+import Peinados from "@/pages/servicios/peinados";
+import Recogidos from "@/pages/servicios/recogidos";
+import Rizos from "@/pages/servicios/rizos";
+import Corte from "@/pages/servicios/corte";
+import CorteCaballero from "@/pages/servicios/corte-caballero";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export function App() {
@@ -18,6 +27,15 @@ export function App() {
         <Route path="/" element={<Home />} />
         <Route path="/descargar-app" element={<DescargarApp />} />
         <Route path="/reservas-app" element={<ReservasApp />} />
+        <Route path="/alisados" element={<Alisados />} />
+        <Route path="/servicios/highlights" element={<Highlights />} />
+        <Route path="/servicios/balayages" element={<Balayages />} />
+        <Route path="/servicios/color" element={<Color />} />
+        <Route path="/servicios/peinados" element={<Peinados />} />
+        <Route path="/servicios/recogidos" element={<Recogidos />} />
+        <Route path="/servicios/rizos" element={<Rizos />} />
+        <Route path="/servicios/corte" element={<Corte />} />
+        <Route path="/servicios/corte-caballero" element={<CorteCaballero />} />
 
         {/* Authentication routes */}
         <Route path="/signin" element={<SignIn />} />

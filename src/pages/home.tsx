@@ -3,14 +3,25 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Instagram, Menu, X, Globe, Calendar, Users } from 'lucide-react';
 import { WhatsAppButton } from '@/components/whatsapp-button';
+import { ServicesDropdown } from '@/components/ServicesDropdown';
 
 type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 
 const translations = {
   ES: {
     nav: {
-      about: 'Nosotros',
+      home: 'Inicio',
+      smoothing: 'Alisados',
       services: 'Servicios',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Color',
+      hairstyles: 'Peinados',
+      updos: 'Recogidos',
+      permanentCurls: 'Rizos permanentes',
+      cut: 'Corte',
+      menCut: 'Corte Caballero',
+      about: 'Nosotros',
       brands: 'Marcas',
       contact: 'Donde estamos',
       reserve: 'Reservar',
@@ -57,8 +68,18 @@ const translations = {
   },
   EN: {
     nav: {
-      about: 'About Us',
+      home: 'Home',
+      smoothing: 'Smoothing',
       services: 'Services',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Color',
+      hairstyles: 'Hairstyles',
+      updos: 'Updos',
+      permanentCurls: 'Permanent Curls',
+      cut: 'Cut',
+      menCut: 'Men\'s Cut',
+      about: 'About Us',
       brands: 'Brands',
       contact: 'Where we are',
       reserve: 'Book Now',
@@ -105,8 +126,18 @@ const translations = {
   },
   FR: {
     nav: {
-      about: 'À propos',
+      home: 'Accueil',
+      smoothing: 'Lissages',
       services: 'Services',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Couleur',
+      hairstyles: 'Coiffures',
+      updos: 'Chignons',
+      permanentCurls: 'Boucles permanentes',
+      cut: 'Coupe',
+      menCut: 'Coupe Homme',
+      about: 'À propos',
       brands: 'Marques',
       contact: 'Où nous sommes',
       reserve: 'Réserver',
@@ -153,8 +184,18 @@ const translations = {
   },
   DE: {
     nav: {
-      about: 'Über uns',
+      home: 'Startseite',
+      smoothing: 'Glättungen',
       services: 'Dienstleistungen',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Farbe',
+      hairstyles: 'Frisuren',
+      updos: 'Hochsteckfrisuren',
+      permanentCurls: 'Dauerwellen',
+      cut: 'Schnitt',
+      menCut: 'Herrenschnitt',
+      about: 'Über uns',
       brands: 'Marken',
       contact: 'Wo wir sind',
       reserve: 'Reservieren',
@@ -201,8 +242,18 @@ const translations = {
   },
   IT: {
     nav: {
-      about: 'Chi Siamo',
+      home: 'Home',
+      smoothing: 'Lisciature',
       services: 'Servizi',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Colore',
+      hairstyles: 'Acconciature',
+      updos: 'Raccolti',
+      permanentCurls: 'Ricci permanenti',
+      cut: 'Taglio',
+      menCut: 'Taglio Uomo',
+      about: 'Chi Siamo',
       brands: 'Marchi',
       contact: 'Dove siamo',
       reserve: 'Prenota',
@@ -305,16 +356,23 @@ export default function Home() {
             
             <nav className="hidden md:flex items-center gap-6">
               <button
+                onClick={scrollToTop}
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
+              >
+                {t.nav.home}
+              </button>
+              <Link
+                to="/alisados"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
+              >
+                {t.nav.smoothing}
+              </Link>
+              <ServicesDropdown translations={t.nav} />
+              <button
                 onClick={() => scrollToSection('historia')}
                 className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
                 {t.nav.about}
-              </button>
-              <button
-                onClick={() => scrollToSection('marcas')}
-                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
-              >
-                {t.nav.services}
               </button>
               <button
                 onClick={() => scrollToSection('marcas')}
@@ -449,16 +507,24 @@ export default function Home() {
 
             <nav className="flex flex-col gap-4 mb-8">
               <button
+                onClick={scrollToTop}
+                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
+              >
+                {t.nav.home}
+              </button>
+              <Link
+                to="/alisados"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
+              >
+                {t.nav.smoothing}
+              </Link>
+              <ServicesDropdown translations={t.nav} isMobile />
+              <button
                 onClick={() => scrollToSection('historia')}
                 className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
               >
                 {t.nav.about}
-              </button>
-              <button
-                onClick={() => scrollToSection('marcas')}
-                className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2"
-              >
-                {t.nav.services}
               </button>
               <button
                 onClick={() => scrollToSection('marcas')}

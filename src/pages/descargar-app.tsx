@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { WhatsAppButton } from '@/components/whatsapp-button';
+import { ServicesDropdown } from '@/components/ServicesDropdown';
 
 type Language = 'es' | 'en' | 'fr' | 'de' | 'it';
 
@@ -210,6 +211,20 @@ export default function DescargarApp() {
             </button>
             
             <nav className="hidden md:flex items-center gap-6">
+              <Link
+                to="/"
+                className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+              >
+                {t.home}
+              </Link>
+              <Link
+                to="/alisados"
+                className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+              >
+                {t.smoothing}
+              </Link>
+              <ServicesDropdown translations={t} />
+
               <Link to="/#historia" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.about}
               </Link>
