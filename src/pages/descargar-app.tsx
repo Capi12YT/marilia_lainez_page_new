@@ -10,8 +10,18 @@ type Language = 'es' | 'en' | 'fr' | 'de' | 'it';
 const translations = {
   es: {
     nav: {
-      about: 'Nosotros',
+      home: 'Inicio',
+      smoothing: 'Alisados',
       services: 'Servicios',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Color',
+      hairstyles: 'Peinados',
+      updos: 'Recogidos',
+      permanentCurls: 'Rizos permanentes',
+      cut: 'Corte',
+      menCut: 'Corte Caballero',
+      about: 'Nosotros',
       brands: 'Marcas',
       contact: 'Donde estamos',
       reserve: 'Reservar',
@@ -41,8 +51,18 @@ const translations = {
   },
   en: {
     nav: {
-      about: 'About Us',
+      home: 'Home',
+      smoothing: 'Smoothing',
       services: 'Services',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Color',
+      hairstyles: 'Hairstyles',
+      updos: 'Updos',
+      permanentCurls: 'Permanent Curls',
+      cut: 'Cut',
+      menCut: 'Men\'s Cut',
+      about: 'About Us',
       brands: 'Brands',
       contact: 'Where we are',
       reserve: 'Book Now',
@@ -72,8 +92,18 @@ const translations = {
   },
   fr: {
     nav: {
-      about: 'À propos',
+      home: 'Accueil',
+      smoothing: 'Lissages',
       services: 'Services',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Couleur',
+      hairstyles: 'Coiffures',
+      updos: 'Chignons',
+      permanentCurls: 'Boucles permanentes',
+      cut: 'Coupe',
+      menCut: 'Coupe Homme',
+      about: 'À propos',
       brands: 'Marques',
       contact: 'Où nous sommes',
       reserve: 'Réserver',
@@ -103,8 +133,18 @@ const translations = {
   },
   de: {
     nav: {
-      about: 'Über uns',
+      home: 'Startseite',
+      smoothing: 'Glättungen',
       services: 'Dienstleistungen',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Farbe',
+      hairstyles: 'Frisuren',
+      updos: 'Hochsteckfrisuren',
+      permanentCurls: 'Dauerwellen',
+      cut: 'Schnitt',
+      menCut: 'Herrenschnitt',
+      about: 'Über uns',
       brands: 'Marken',
       contact: 'Wo wir sind',
       reserve: 'Buchen',
@@ -134,8 +174,18 @@ const translations = {
   },
   it: {
     nav: {
-      about: 'Chi siamo',
+      home: 'Home',
+      smoothing: 'Lisciature',
       services: 'Servizi',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Colore',
+      hairstyles: 'Acconciature',
+      updos: 'Raccolti',
+      permanentCurls: 'Ricci permanenti',
+      cut: 'Taglio',
+      menCut: 'Taglio Uomo',
+      about: 'Chi siamo',
       brands: 'Marchi',
       contact: 'Dove siamo',
       reserve: 'Prenota',
@@ -213,32 +263,25 @@ export default function DescargarApp() {
             <nav className="hidden md:flex items-center gap-6">
               <Link
                 to="/"
-                className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
-                {t.home}
+                {t.nav.home}
               </Link>
               <Link
                 to="/alisados"
-                className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
-                {t.smoothing}
+                {t.nav.smoothing}
               </Link>
-              <ServicesDropdown translations={t} />
-
+              <ServicesDropdown translations={t.nav} />
               <Link to="/#historia" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.about}
-              </Link>
-              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
-                {t.nav.services}
               </Link>
               <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.brands}
               </Link>
               <Link to="/#ubicacion" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
                 {t.nav.contact}
-              </Link>
-              <Link to="/" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
-                {t.backToHome}
               </Link>
             </nav>
 
@@ -358,20 +401,21 @@ export default function DescargarApp() {
             </div>
 
             <nav className="flex flex-col gap-4 mb-8">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
+                {t.nav.home}
+              </Link>
+              <Link to="/alisados" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
+                {t.nav.smoothing}
+              </Link>
+              <ServicesDropdown translations={t.nav} isMobile />
               <Link to="/#historia" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
                 {t.nav.about}
-              </Link>
-              <Link to="/#marcas" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
-                {t.nav.services}
               </Link>
               <Link to="/#marcas" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
                 {t.nav.brands}
               </Link>
               <Link to="/#ubicacion" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
                 {t.nav.contact}
-              </Link>
-              <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-left text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors py-2">
-                {t.backToHome}
               </Link>
             </nav>
 

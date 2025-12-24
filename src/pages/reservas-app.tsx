@@ -9,7 +9,20 @@ type Language = 'ES' | 'EN' | 'FR' | 'DE' | 'IT';
 const translations = {
   ES: {
     nav: {
-      backToHome: 'Volver al inicio',
+      home: 'Inicio',
+      smoothing: 'Alisados',
+      services: 'Servicios',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Color',
+      hairstyles: 'Peinados',
+      updos: 'Recogidos',
+      permanentCurls: 'Rizos permanentes',
+      cut: 'Corte',
+      menCut: 'Corte Caballero',
+      about: 'Nosotros',
+      brands: 'Marcas',
+      contact: 'Donde estamos',
       reserve: 'Reservar',
     },
     hero: {
@@ -59,7 +72,20 @@ const translations = {
   },
   EN: {
     nav: {
-      backToHome: 'Back to Home',
+      home: 'Home',
+      smoothing: 'Smoothing',
+      services: 'Services',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Color',
+      hairstyles: 'Hairstyles',
+      updos: 'Updos',
+      permanentCurls: 'Permanent Curls',
+      cut: 'Cut',
+      menCut: 'Men\'s Cut',
+      about: 'About Us',
+      brands: 'Brands',
+      contact: 'Where we are',
       reserve: 'Book Now',
     },
     hero: {
@@ -109,7 +135,20 @@ const translations = {
   },
   FR: {
     nav: {
-      backToHome: 'Retour à l\'accueil',
+      home: 'Accueil',
+      smoothing: 'Lissages',
+      services: 'Services',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Couleur',
+      hairstyles: 'Coiffures',
+      updos: 'Chignons',
+      permanentCurls: 'Boucles permanentes',
+      cut: 'Coupe',
+      menCut: 'Coupe Homme',
+      about: 'À propos',
+      brands: 'Marques',
+      contact: 'Où nous sommes',
       reserve: 'Réserver',
     },
     hero: {
@@ -159,7 +198,20 @@ const translations = {
   },
   DE: {
     nav: {
-      backToHome: 'Zurück zur Startseite',
+      home: 'Startseite',
+      smoothing: 'Glättungen',
+      services: 'Dienstleistungen',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Farbe',
+      hairstyles: 'Frisuren',
+      updos: 'Hochsteckfrisuren',
+      permanentCurls: 'Dauerwellen',
+      cut: 'Schnitt',
+      menCut: 'Herrenschnitt',
+      about: 'Über uns',
+      brands: 'Marken',
+      contact: 'Wo wir sind',
       reserve: 'Buchen',
     },
     hero: {
@@ -209,7 +261,20 @@ const translations = {
   },
   IT: {
     nav: {
-      backToHome: 'Torna alla home',
+      home: 'Home',
+      smoothing: 'Lisciature',
+      services: 'Servizi',
+      highlights: 'Highlights & Style',
+      balayages: 'Balayages & Style',
+      color: 'Colore',
+      hairstyles: 'Acconciature',
+      updos: 'Raccolti',
+      permanentCurls: 'Ricci permanenti',
+      cut: 'Taglio',
+      menCut: 'Taglio Uomo',
+      about: 'Chi siamo',
+      brands: 'Marchi',
+      contact: 'Dove siamo',
       reserve: 'Prenota',
     },
     hero: {
@@ -307,26 +372,34 @@ export default function ReservasApp() {
           <nav className="hidden md:flex items-center gap-8">
               <Link
                 to="/"
-                className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
-                {t.home}
+                {t.nav.home}
               </Link>
               <Link
                 to="/alisados"
-                className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+                className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
               >
-                {t.smoothing}
+                {t.nav.smoothing}
               </Link>
-              <ServicesDropdown translations={t} />
+              <ServicesDropdown translations={t.nav} />
+              <Link to="/#historia" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
+                {t.nav.about}
+              </Link>
+              <Link to="/#marcas" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
+                {t.nav.brands}
+              </Link>
+              <Link to="/#ubicacion" className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black">
+                {t.nav.contact}
+              </Link>
+          </nav>
 
-            <Link
-              to="/"
-              className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
-            >
-              {t.nav.backToHome}
+          <div className="hidden md:flex items-center gap-4">
+            <Link to="/reservas-app">
+              <button className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-300 font-medium">
+                {t.nav.reserve}
+              </button>
             </Link>
-
-            <div className="flex items-center gap-4">
               <button
                 onClick={() => setLanguage('ES')}
                 className={`font-medium transition-colors ${
@@ -393,7 +466,6 @@ export default function ReservasApp() {
                 )}
               </div>
             </div>
-          </nav>
 
           <button
             className="md:hidden text-gray-900"
@@ -433,7 +505,43 @@ export default function ReservasApp() {
                 onClick={handleMobileMenuClose}
                 className="text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors"
               >
-                {t.nav.backToHome}
+                {t.nav.home}
+              </Link>
+              <Link
+                to="/alisados"
+                onClick={handleMobileMenuClose}
+                className="text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors"
+              >
+                {t.nav.smoothing}
+              </Link>
+              <ServicesDropdown translations={t.nav} isMobile />
+              <Link
+                to="/#historia"
+                onClick={handleMobileMenuClose}
+                className="text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors"
+              >
+                {t.nav.about}
+              </Link>
+              <Link
+                to="/#marcas"
+                onClick={handleMobileMenuClose}
+                className="text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors"
+              >
+                {t.nav.brands}
+              </Link>
+              <Link
+                to="/#ubicacion"
+                onClick={handleMobileMenuClose}
+                className="text-gray-900 hover:text-gray-700 font-medium text-lg transition-colors"
+              >
+                {t.nav.contact}
+              </Link>
+              <Link
+                to="/reservas-app"
+                onClick={handleMobileMenuClose}
+                className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium text-center"
+              >
+                {t.nav.reserve}
               </Link>
             </nav>
 
