@@ -1,4 +1,4 @@
-import { Smartphone, Check, Calendar, Clock, Bell, Star, Instagram, Menu, X, Globe } from 'lucide-react';
+import { Smartphone, Check, Calendar, Clock, Bell, Star, Instagram, Menu, X, Globe, Apple } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -44,6 +44,10 @@ const translations = {
       subtitle: 'Disfruta de una experiencia premium diseñada para ti',
     },
     comingSoon: 'Próximamente disponible',
+    downloadButtons: {
+      googlePlay: 'Disponible en Google Play',
+      appStore: 'Descargar en App Store',
+    },
     footer: {
       brandName: 'María Lainez Hair Stylist',
       designed: 'Diseñado por CapJe © 2026',
@@ -85,6 +89,10 @@ const translations = {
       subtitle: 'Enjoy a premium experience designed for you',
     },
     comingSoon: 'Coming Soon',
+    downloadButtons: {
+      googlePlay: 'Get it on Google Play',
+      appStore: 'Download on App Store',
+    },
     footer: {
       brandName: 'María Lainez Hair Stylist',
       designed: 'Designed by CapJe © 2026',
@@ -126,6 +134,10 @@ const translations = {
       subtitle: 'Profitez d\'une expérience premium conçue pour vous',
     },
     comingSoon: 'Bientôt disponible',
+    downloadButtons: {
+      googlePlay: 'Disponible sur Google Play',
+      appStore: 'Télécharger sur App Store',
+    },
     footer: {
       brandName: 'María Lainez Coiffeur',
       designed: 'Conçu par CapJe © 2026',
@@ -167,6 +179,10 @@ const translations = {
       subtitle: 'Genießen Sie ein Premium-Erlebnis, das für Sie entwickelt wurde',
     },
     comingSoon: 'Demnächst verfügbar',
+    downloadButtons: {
+      googlePlay: 'Jetzt bei Google Play',
+      appStore: 'Im App Store laden',
+    },
     footer: {
       brandName: 'María Lainez Friseur',
       designed: 'Entworfen von CapJe © 2026',
@@ -208,6 +224,10 @@ const translations = {
       subtitle: 'Goditi un\'esperienza premium progettata per te',
     },
     comingSoon: 'Disponibile a breve',
+    downloadButtons: {
+      googlePlay: 'Disponibile su Google Play',
+      appStore: 'Scarica su App Store',
+    },
     footer: {
       brandName: 'María Lainez Parrucchiere',
       designed: 'Progettato da CapJe © 2026',
@@ -482,6 +502,34 @@ export default function DescargarApp() {
               </div>
             </div>
 
+            <div className="flex flex-col items-center justify-center space-y-6">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full md:w-auto justify-center">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.gausswebapp.thebeautyroom&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center gap-4 bg-black text-white px-8 py-5 rounded-xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full md:w-auto"
+                >
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4CAF50"/>
+                    <path d="M3.84,21.85L13.69,12L3.84,2.15C3.34,2.39 3,2.91 3,3.5V20.5C3,21.09 3.34,21.6 3.84,21.85Z" fill="#4285F4"/>
+                    <path d="M16.81,15.12L13.69,12L16.81,8.88L20.16,10.81L20.18,13.18L16.81,15.12Z" fill="#FBC02D"/>
+                    <path d="M13.69,12L3.84,2.15C4.16,2 4.5,2 4.84,2.18L16.81,8.88L13.69,12Z" fill="#EA4335"/>
+                  </svg>
+                  <span>{t.downloadButtons.googlePlay}</span>
+                </a>
+
+                <a
+                  href="https://apps.apple.com/es/app/the-beauty-room-sotogrande/id1485708555"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center gap-4 bg-black text-white px-8 py-5 rounded-xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full md:w-auto"
+                >
+                  <Apple className="w-8 h-8" />
+                  <span>{t.downloadButtons.appStore}</span>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="max-w-5xl mx-auto">
