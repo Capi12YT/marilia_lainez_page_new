@@ -600,7 +600,9 @@ export default function ReservasApp() {
 
               <div className="flex flex-col gap-4 w-full max-w-sm">
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.gausswebapp.thebeautyroom&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-4 bg-black text-white px-8 py-5 rounded-xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
                 >
                   <svg className="h-10 w-10" viewBox="0 0 24 24" fill="currentColor">
@@ -613,7 +615,9 @@ export default function ReservasApp() {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://apps.apple.com/es/app/the-beauty-room-sotogrande/id1485708555"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-4 bg-black text-white px-8 py-5 rounded-xl hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
                 >
                   <svg className="h-10 w-10" viewBox="0 0 24 24" fill="currentColor">
@@ -800,7 +804,9 @@ export default function ReservasApp() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.gausswebapp.thebeautyroom&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-black text-white px-10 py-4 rounded-xl hover:bg-gray-800 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto text-lg font-bold"
               >
                 <Download className="h-6 w-6" />
