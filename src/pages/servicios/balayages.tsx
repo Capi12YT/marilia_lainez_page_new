@@ -23,7 +23,7 @@ const translations = {
     brands: 'Marcas',
     whereWeAre: 'Donde estamos',
     bookNow: 'Reservar',
-    title: 'Balayages TITLE_ES Style',
+    title: 'Balayages & Style',
     beforeAfter: 'Antes/Después',
     after: 'Después',
     before: 'Antes',
@@ -53,14 +53,14 @@ const translations = {
     brands: 'Brands',
     whereWeAre: 'Where we are',
     bookNow: 'Book Now',
-    title: 'Balayages TITLE_EN Style',
+    title: 'Balayages & Style',
     beforeAfter: 'Before/After',
     after: 'After',
     before: 'Before',
     specialistsIn: 'We are specialists in balayages',
-    description1: 'DESC1_EN',
-    description2: 'DESC2_EN',
-    description3: 'DESC3_EN',
+    description1: 'Balayage is a French hand-painting technique that creates a natural, personalized gradient effect. At María Lainez Hair Stylist we are experts in this sophisticated technique that provides spectacular results.',
+    description2: 'Our team of expert colorists strategically paints color onto your hair to achieve smooth, natural transitions. Balayage is ideal for creating sun-kissed, luminous looks that require little maintenance and grow out elegantly.',
+    description3: 'Whether you\'re looking for a subtle balayage with natural tones or a more dramatic effect with pronounced contrasts, we customize each application according to your style. Balayage is perfect for all hair types and offers durable, beautiful results.',
     stat1: 'Nº1 in Balayages',
     stat2: '100% Satisfied Customers',
     stat3: '10/10 Come Back',
@@ -83,14 +83,14 @@ const translations = {
     brands: 'Marques',
     whereWeAre: 'Où nous sommes',
     bookNow: 'Réserver',
-    title: 'Balayages TITLE_FR Style',
+    title: 'Balayages & Style',
     beforeAfter: 'Avant/Après',
     after: 'Après',
     before: 'Avant',
     specialistsIn: 'Nous sommes spécialistes en balayages',
-    description1: 'DESC1_FR',
-    description2: 'DESC2_FR',
-    description3: 'DESC3_FR',
+    description1: 'Le balayage est une technique française de coloration à la main qui crée un effet dégradé naturel et personnalisé. Chez María Lainez Hair Stylist, nous sommes expertes dans cette technique sophistiquée qui procure des résultats spectaculaires.',
+    description2: 'Notre équipe de coloristes experts peint stratégiquement la couleur sur vos cheveux pour obtenir des transitions douces et naturelles. Le balayage est idéal pour créer des looks ensoleillés et lumineux qui nécessitent peu d\'entretien et repoussent élégamment.',
+    description3: 'Que vous recherchiez un balayage subtil avec des tons naturels ou un effet plus dramatique avec des contrastes prononcés, nous personnalisons chaque application selon votre style. Le balayage est parfait pour tous les types de cheveux et offre des résultats durables et magnifiques.',
     stat1: 'Nº1 en Balayages',
     stat2: '100% Clients Satisfaits',
     stat3: '10/10 Reviennent',
@@ -113,14 +113,14 @@ const translations = {
     brands: 'Marken',
     whereWeAre: 'Wo wir sind',
     bookNow: 'Buchen',
-    title: 'Balayages TITLE_DE Style',
+    title: 'Balayages & Style',
     beforeAfter: 'Vorher/Nachher',
     after: 'Nachher',
     before: 'Vorher',
     specialistsIn: 'Wir sind Spezialisten für Balayages',
-    description1: 'DESC1_DE',
-    description2: 'DESC2_DE',
-    description3: 'DESC3_DE',
+    description1: 'Balayage ist eine französische Handmaltechnik, die einen natürlichen, personalisierten Verlaufseffekt erzeugt. Bei María Lainez Hair Stylist sind wir Expertinnen in dieser raffinierten Technik, die spektakuläre Ergebnisse liefert.',
+    description2: 'Unser Team erfahrener Coloristen malt strategisch Farbe auf Ihr Haar, um weiche, natürliche Übergänge zu erreichen. Balayage ist ideal, um sonnengeküsste, leuchtende Looks zu kreieren, die wenig Pflege benötigen und elegant herauswachsen.',
+    description3: 'Ob Sie einen subtilen Balayage mit natürlichen Tönen oder einen dramatischeren Effekt mit ausgeprägten Kontrasten suchen, wir passen jede Anwendung an Ihren Stil an. Balayage ist perfekt für alle Haartypen und bietet dauerhafte, schöne Ergebnisse.',
     stat1: 'Nº1 in Balayages',
     stat2: '100% Zufriedene Kunden',
     stat3: '10/10 Kommen Zurück',
@@ -143,14 +143,14 @@ const translations = {
     brands: 'Marchi',
     whereWeAre: 'Dove siamo',
     bookNow: 'Prenota',
-    title: 'Balayages TITLE_IT Style',
+    title: 'Balayages & Style',
     beforeAfter: 'Prima/Dopo',
     after: 'Dopo',
     before: 'Prima',
     specialistsIn: 'Siamo specialisti in balayages',
-    description1: 'DESC1_IT',
-    description2: 'DESC2_IT',
-    description3: 'DESC3_IT',
+    description1: 'Il balayage è una tecnica francese di colorazione a mano che crea un effetto gradiente naturale e personalizzato. Da María Lainez Hair Stylist siamo esperte in questa tecnica sofisticata che fornisce risultati spettacolari.',
+    description2: 'Il nostro team di coloriste esperte dipinge strategicamente il colore sui vostri capelli per ottenere transizioni morbide e naturali. Il balayage è ideale per creare look baciati dal sole e luminosi che richiedono poca manutenzione e ricrescono elegantemente.',
+    description3: 'Che stiate cercando un balayage sottile con toni naturali o un effetto più drammatico con contrasti pronunciati, personalizziamo ogni applicazione secondo il vostro stile. Il balayage è perfetto per tutti i tipi di capelli e offre risultati duraturi e belli.',
     stat1: 'Nº1 in Balayages',
     stat2: '100% Clienti Soddisfatti',
     stat3: '10/10 Tornano',
@@ -193,52 +193,46 @@ export default function ServicePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
+          <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <button
-            onClick={() => navigate('/')}
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded-full"
-            aria-label="Volver al inicio"
-          >
-            <img
-              src="/logo-maria-lainez.jpg"
-              alt="Logo María Lainez"
-              className="h-12 w-12 rounded-full object-cover"
-            />
-            <span className="text-xl font-bold text-gray-900 hidden md:block">
-              María Lainez Hair Stylist
-            </span>
-          </button>
+         
+          <button 
+              onClick={() => navigate('/')}
+              className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
+              aria-label="Ir al inicio"
+            >
+              <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full cursor-pointer" />
+            </button>
 
           <nav className="hidden md:flex items-center gap-8">
             <Link
               to="/"
-              className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+              className="text-gray-900 hover:text-gray-700 font-medium hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
             >
               {t.home}
             </Link>
             <Link
               to="/alisados"
-              className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+              className="text-gray-900 hover:text-gray-700 font-medium hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
             >
               {t.smoothing}
             </Link>
             <ServicesDropdown translations={t} />
             <button
               onClick={() => scrollToSection('historia')}
-              className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+              className="text-gray-900 hover:text-gray-700 font-medium hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
             >
               {t.aboutUs}
             </button>
             <button
               onClick={() => scrollToSection('brands')}
-              className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+              className="text-gray-900 hover:text-gray-700 font-medium hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
             >
               {t.brands}
             </button>
             <button
               onClick={() => scrollToSection('ubicacion')}
-              className="text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
+              className="text-gray-900 hover:text-gray-700 font-medium hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
             >
               {t.whereWeAre}
             </button>
@@ -246,75 +240,86 @@ export default function ServicePage() {
 
           <div className="hidden md:flex items-center gap-4">
             <button
-              onClick={() => navigate('/reservas-app')}
+              onClick={() => navigate('/descargar-app')}
               className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
             >
               {t.bookNow}
             </button>
 
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setLanguage('es')}
-                className={`px-2 py-1 rounded transition-colors ${
-                  language === 'es' ? 'bg-yellow-300 font-semibold' : 'hover:bg-yellow-300'
-                }`}
-              >
-                ES
-              </button>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-2 py-1 rounded transition-colors ${
-                  language === 'en' ? 'bg-yellow-300 font-semibold' : 'hover:bg-yellow-300'
-                }`}
-              >
-                EN
-              </button>
-              <div className="relative" ref={dropdownRef}>
+            <div className="relative" ref={dropdownRef}>
+              <div className="flex items-center gap-2 bg-white rounded-md p-1">
+                <button
+                  onClick={() => setLanguage('es')}
+                  className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                    language === 'es'
+                      ? 'bg-yellow-400 text-gray-900'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  ES
+                </button>
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                    language === 'en'
+                      ? 'bg-yellow-400 text-gray-900'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  EN
+                </button>
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
-                  className="p-2 hover:bg-yellow-300 rounded transition-colors"
+                  className="px-2 py-1 text-gray-600 hover:text-gray-900 transition-colors"
                   aria-label="More languages"
                 >
-                  <Globe className="w-5 h-5" />
+                  <Globe className="w-4 h-4" />
                 </button>
-                {showDropdown && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-xl py-2 z-50">
-                    <button
-                      onClick={() => {
-                        setLanguage('fr');
-                        setShowDropdown(false);
-                      }}
-                      className={`block w-full text-left px-4 py-2 hover:bg-gray-50 ${
-                        language === 'fr' ? 'bg-yellow-100' : ''
-                      }`}
-                    >
-                      FR
-                    </button>
-                    <button
-                      onClick={() => {
-                        setLanguage('de');
-                        setShowDropdown(false);
-                      }}
-                      className={`block w-full text-left px-4 py-2 hover:bg-gray-50 ${
-                        language === 'de' ? 'bg-yellow-100' : ''
-                      }`}
-                    >
-                      DE
-                    </button>
-                    <button
-                      onClick={() => {
-                        setLanguage('it');
-                        setShowDropdown(false);
-                      }}
-                      className={`block w-full text-left px-4 py-2 hover:bg-gray-50 ${
-                        language === 'it' ? 'bg-yellow-100' : ''
-                      }`}
-                    >
-                      IT
-                    </button>
-                  </div>
-                )}
               </div>
+
+              {showDropdown && (
+                <div className="absolute top-full right-0 mt-2 bg-white rounded-md shadow-lg p-1 z-50 min-w-[100px] animate-in fade-in slide-in-from-top-2 duration-200">
+                  <button
+                    onClick={() => {
+                      setLanguage('fr');
+                      setShowDropdown(false);
+                    }}
+                    className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                      language === 'fr'
+                        ? 'bg-yellow-400 text-gray-900'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    }`}
+                  >
+                    FR
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLanguage('de');
+                      setShowDropdown(false);
+                    }}
+                    className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                      language === 'de'
+                        ? 'bg-yellow-400 text-gray-900'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    }`}
+                  >
+                    DE
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLanguage('it');
+                      setShowDropdown(false);
+                    }}
+                    className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                      language === 'it'
+                        ? 'bg-yellow-400 text-gray-900'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    }`}
+                  >
+                    IT
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -326,7 +331,7 @@ export default function ServicePage() {
             <Menu className="w-6 h-6" />
           </button>
         </div>
-      </header>
+      </header> 
 
       {mobileMenuOpen && (
         <>
@@ -387,7 +392,7 @@ export default function ServicePage() {
 
                 <button
                   onClick={() => {
-                    navigate('/reservas-app');
+                    navigate('/descargar-app');
                     setMobileMenuOpen(false);
                   }}
                   className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium text-center"
@@ -449,19 +454,19 @@ export default function ServicePage() {
         <section className="container mx-auto px-4 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
-              <div className="relative aspect-[3/4] bg-gray-200 rounded-xl overflow-hidden shadow-xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-500 text-2xl font-medium">
-                    {showAfter ? t.after : t.before}
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => setShowAfter(!showAfter)}
-                className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-              >
-                {t.beforeAfter}
-              </button>
+                  <div className="relative bg-gray-200 rounded-xl overflow-hidden shadow-xl h-[50vh] xl:h-[70vh]">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-gray-500 text-2xl font-medium">
+                        {showAfter ? t.after : t.before}
+                      </p>
+                    </div>
+                  </div>
+                <button
+                  onClick={() => setShowAfter(!showAfter)}
+                  className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+                >
+                  {t.beforeAfter}
+                </button>
             </div>
 
             <div className="space-y-6">

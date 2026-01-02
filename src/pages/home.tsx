@@ -37,9 +37,11 @@ const translations = {
       text: 'María Lainez Hair Stylist nació con la visión de ofrecer servicios de peluquería de la más alta calidad utilizando las mejores marcas profesionales. Desde nuestros humildes comienzos, nos hemos convertido en un referente en estilismo capilar en Puerto Sotogrande, manteniendo siempre nuestro compromiso con la excelencia y la satisfacción del cliente. Cada día trabajamos con pasión para realzar tu belleza natural y crear looks únicos que reflejen tu personalidad.',
       yearsExperience: 'Años de Experiencia',
       satisfiedClients: 'Clientes Satisfechos',
+      alt: 'Nuestra Historia',
     },
     reviews: {
       title: 'Lo Que Dicen Nuestras Clientes',
+      writeReview: 'Escribe una reseña',
     },
     brands: {
       title: 'Nuestras Marcas',
@@ -60,10 +62,20 @@ const translations = {
       closed: 'Cerrado',
       time1: '10:00 - 18:00',
       time2: '10:00 - 14:00',
+      mapAlt: 'Ubicación de María Lainez Hair Stylist en Puerto Sotogrande',
+      mapTitle: 'Ubicación de María Lainez Hair Stylist en Puerto Sotogrande',
     },
     footer: {
       brandName: 'María Lainez Hair Stylist',
       designed: 'Diseñado por CapJe © 2026',
+    },
+    accessibility: {
+      goToHome: 'Ir al inicio',
+      moreLanguages: 'Más idiomas',
+      toggleMenu: 'Alternar menú',
+      closeMenu: 'Cerrar menú',
+      language: 'Idioma / Language',
+      instagram: 'Instagram',
     },
   },
   EN: {
@@ -95,9 +107,11 @@ const translations = {
       text: 'María Lainez Hair Stylist was born with the vision of offering the highest quality hairdressing services using the best professional brands. From our humble beginnings, we have become a benchmark in hair styling in Puerto Sotogrande, always maintaining our commitment to excellence and customer satisfaction. Every day we work with passion to enhance your natural beauty and create unique looks that reflect your personality.',
       yearsExperience: 'Years of Experience',
       satisfiedClients: 'Satisfied Clients',
+      alt: 'Our Story',
     },
     reviews: {
       title: 'What Our Customers Say',
+      writeReview: 'Write a Review',
     },
     brands: {
       title: 'Our Brands',
@@ -118,10 +132,20 @@ const translations = {
       closed: 'Closed',
       time1: '10:00 - 18:00',
       time2: '10:00 - 14:00',
+      mapAlt: 'Location of María Lainez Hair Stylist in Puerto Sotogrande',
+      mapTitle: 'Location of María Lainez Hair Stylist in Puerto Sotogrande',
     },
     footer: {
       brandName: 'María Lainez Hair Stylist',
       designed: 'Designed by CapJe © 2026',
+    },
+    accessibility: {
+      goToHome: 'Go to home',
+      moreLanguages: 'More languages',
+      toggleMenu: 'Toggle menu',
+      closeMenu: 'Close menu',
+      language: 'Idioma / Language',
+      instagram: 'Instagram',
     },
   },
   FR: {
@@ -143,7 +167,7 @@ const translations = {
       reserve: 'Réserver',
     },
     hero: {
-      title: 'María Lainez Coiffeur',
+      title: 'María Lainez Hair Stylist',
       subtitle: 'Meilleur salon de coiffure d\'Espagne, ce ne sont pas nos mots, nos',
       subtitleLink: 'Clients',
       cta: 'Réserver Maintenant',
@@ -153,9 +177,11 @@ const translations = {
       text: "María Lainez Coiffeur est né avec la vision d'offrir des services de coiffure de la plus haute qualité en utilisant les meilleures marques professionnelles. Depuis nos modestes débuts, nous sommes devenus une référence en stylisme capillaire à Puerto Sotogrande, en maintenant toujours notre engagement envers l'excellence et la satisfaction client. Chaque jour, nous travaillons avec passion pour sublimer votre beauté naturelle et créer des looks uniques qui reflètent votre personnalité.",
       yearsExperience: 'Ans d\'Expérience',
       satisfiedClients: 'Clients Satisfaits',
+      alt: 'Notre Histoire',
     },
     reviews: {
       title: 'Ce Que Disent Nos Clientes',
+      writeReview: 'Écrire un avis',
     },
     brands: {
       title: 'Nos Marques',
@@ -176,10 +202,20 @@ const translations = {
       closed: 'Fermé',
       time1: '10:00 - 18:00',
       time2: '10:00 - 14:00',
+      mapAlt: 'Emplacement de María Lainez Coiffeur à Puerto Sotogrande',
+      mapTitle: 'Emplacement de María Lainez Coiffeur à Puerto Sotogrande',
     },
     footer: {
-      brandName: 'María Lainez Coiffeur',
+      brandName: 'María Lainez Hair Stylist',
       designed: 'Conçu par CapJe © 2026',
+    },
+    accessibility: {
+      goToHome: 'Aller à l\'accueil',
+      moreLanguages: 'Plus de langues',
+      toggleMenu: 'Basculer le menu',
+      closeMenu: 'Fermer le menu',
+      language: 'Idioma / Language',
+      instagram: 'Instagram',
     },
   },
   DE: {
@@ -201,7 +237,7 @@ const translations = {
       reserve: 'Reservieren',
     },
     hero: {
-      title: 'María Lainez Friseur',
+      title: 'María Lainez Hair Stylist',
       subtitle: 'Bester Friseursalon in Spanien, nicht unsere Worte, unsere',
       subtitleLink: 'Kunden',
       cta: 'Jetzt Buchen',
@@ -211,9 +247,11 @@ const translations = {
       text: 'María Lainez Friseur wurde mit der Vision gegründet, Friseurdienstleistungen höchster Qualität unter Verwendung der besten professionellen Marken anzubieten. Von unseren bescheidenen Anfängen an sind wir zu einem Maßstab im Haarstyling in Puerto Sotogrande geworden und haben dabei stets unser Engagement für Exzellenz und Kundenzufriedenheit beibehalten. Jeden Tag arbeiten wir mit Leidenschaft daran, Ihre natürliche Schönheit zu unterstreichen und einzigartige Looks zu kreieren, die Ihre Persönlichkeit widerspiegeln.',
       yearsExperience: 'Jahre Erfahrung',
       satisfiedClients: 'Zufriedene Kunden',
+      alt: 'Unsere Geschichte',
     },
     reviews: {
       title: 'Was Unsere Kundinnen Sagen',
+      writeReview: 'Eine Bewertung schreiben',
     },
     brands: {
       title: 'Unsere Marken',
@@ -234,10 +272,20 @@ const translations = {
       closed: 'Geschlossen',
       time1: '10:00 - 18:00',
       time2: '10:00 - 14:00',
+      mapAlt: 'Standort von María Lainez Friseur in Puerto Sotogrande',
+      mapTitle: 'Standort von María Lainez Friseur in Puerto Sotogrande',
     },
     footer: {
-      brandName: 'María Lainez Friseur',
+      brandName: 'María Lainez Hair Stylist',
       designed: 'Entworfen von CapJe © 2026',
+    },
+    accessibility: {
+      goToHome: 'Zur Startseite',
+      moreLanguages: 'Mehr Sprachen',
+      toggleMenu: 'Menü umschalten',
+      closeMenu: 'Menü schließen',
+      language: 'Idioma / Language',
+      instagram: 'Instagram',
     },
   },
   IT: {
@@ -259,7 +307,7 @@ const translations = {
       reserve: 'Prenota',
     },
     hero: {
-      title: 'María Lainez Parrucchiere',
+      title: 'María Lainez Hair Stylist',
       subtitle: 'Miglior salone di parrucchiere in Spagna, non sono le nostre parole, i nostri',
       subtitleLink: 'Clienti',
       cta: 'Prenota Ora',
@@ -269,9 +317,11 @@ const translations = {
       text: 'María Lainez Parrucchiere è nato con la visione di offrire servizi di parrucchiere di altissima qualità utilizzando i migliori marchi professionali. Dai nostri umili inizi, siamo diventati un punto di riferimento nello styling dei capelli a Puerto Sotogrande, mantenendo sempre il nostro impegno per l\'eccellenza e la soddisfazione del cliente. Ogni giorno lavoriamo con passione per valorizzare la tua bellezza naturale e creare look unici che riflettono la tua personalità.',
       yearsExperience: 'Anni di Esperienza',
       satisfiedClients: 'Clienti Soddisfatti',
+      alt: 'La Nostra Storia',
     },
     reviews: {
       title: 'Cosa Dicono Le Nostre Clienti',
+      writeReview: 'Scrivi una recensione',
     },
     brands: {
       title: 'I Nostri Marchi',
@@ -292,10 +342,20 @@ const translations = {
       closed: 'Chiuso',
       time1: '10:00 - 18:00',
       time2: '10:00 - 14:00',
+      mapAlt: 'Sede di María Lainez Parrucchiere a Puerto Sotogrande',
+      mapTitle: 'Sede di María Lainez Parrucchiere a Puerto Sotogrande',
     },
     footer: {
-      brandName: 'María Lainez Parrucchiere',
+      brandName: 'María Lainez Hair Stylist',
       designed: 'Progettato da CapJe © 2026',
+    },
+    accessibility: {
+      goToHome: 'Vai alla home',
+      moreLanguages: 'Più lingue',
+      toggleMenu: 'Attiva/disattiva menu',
+      closeMenu: 'Chiudi menu',
+      language: 'Idioma / Language',
+      instagram: 'Instagram',
     },
   },
 };
@@ -316,7 +376,7 @@ export default function Home() {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
     setMobileMenuOpen(false);
   };
 
@@ -349,9 +409,9 @@ export default function Home() {
             <button 
               onClick={scrollToTop}
               className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
-              aria-label="Ir al inicio"
+              aria-label={t.accessibility.goToHome}
             >
-              <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full cursor-pointer" />
+              <img src="/logo-header.webp" alt={t.footer.brandName} className="h-12 w-12 object-cover rounded-full cursor-pointer" />
             </button>
             
             <nav className="hidden md:flex items-center gap-6">
@@ -422,7 +482,7 @@ export default function Home() {
                   <button
                     onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                     className="px-2 py-1 text-gray-600 hover:text-gray-900 transition-colors"
-                    aria-label="More languages"
+                    aria-label={t.accessibility.moreLanguages}
                   >
                     <Globe className="w-4 h-4" />
                   </button>
@@ -468,7 +528,7 @@ export default function Home() {
             <button
               className="md:hidden text-gray-900 p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={t.accessibility.toggleMenu}
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -492,14 +552,14 @@ export default function Home() {
               <button 
                 onClick={scrollToTop}
                 className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
-                aria-label="Ir al inicio"
+                aria-label={t.accessibility.goToHome}
               >
-                <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-10 w-10 object-cover rounded-full cursor-pointer" />
+                <img src="/logo-header.webp" alt={t.footer.brandName} className="h-10 w-10 object-cover rounded-full cursor-pointer" />
               </button>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-gray-900 p-2"
-                aria-label="Close menu"
+                aria-label={t.accessibility.closeMenu}
               >
                 <X className="w-6 h-6" />
               </button>
@@ -549,7 +609,7 @@ export default function Home() {
             </Link>
 
             <div className="border-t border-gray-900/20 pt-6">
-              <p className="text-sm font-medium text-gray-900 mb-3">Idioma / Language</p>
+              <p className="text-sm font-medium text-gray-900 mb-3">{t.accessibility.language}</p>
               <div className="grid grid-cols-3 gap-2">
                 {(['ES', 'EN', 'FR', 'DE', 'IT'] as Language[]).map((lang) => (
                   <button
@@ -602,14 +662,14 @@ export default function Home() {
           <div className="hidden xl:block xl:w-[45%] xl:h-full relative overflow-hidden">
             <img 
               src="/hero.webp" 
-              alt="María Lainez Hair Stylist" 
+              alt={t.footer.brandName} 
               className="absolute inset-0 w-full h-full object-cover object-left-top"
             />
           </div>
         </section>
 
         <section id="reviews" className="py-20 bg-white">
-          <div className="container mx-auto px-4 max-w-6xl">
+          <div className="w-full">
             <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
               {t.reviews.title}
             </h2>
@@ -617,88 +677,22 @@ export default function Home() {
               <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
             </div>
             
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
-                      IC
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold text-gray-900">Isabel Castro</h3>
-                      <div className="flex text-yellow-400">
-                        {'★★★★★'.split('').map((star, i) => (
-                          <span key={i}>{star}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 italic leading-relaxed">
-                    "María es simplemente increíble. Llevo años viniendo y siempre salgo encantada. Su atención al detalle y profesionalidad son excepcionales. ¡Totalmente recomendable!"
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
-                      CR
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold text-gray-900">Carmen Rodríguez</h3>
-                      <div className="flex text-yellow-400">
-                        {'★★★★★'.split('').map((star, i) => (
-                          <span key={i}>{star}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 italic leading-relaxed">
-                    "El mejor salón de Sotogrande sin duda. Los productos que utilizan son de primera calidad y el resultado siempre supera mis expectativas. María es una artista."
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
-                      LS
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold text-gray-900">Laura Sánchez</h3>
-                      <div className="flex text-yellow-400">
-                        {'★★★★★'.split('').map((star, i) => (
-                          <span key={i}>{star}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 italic leading-relaxed">
-                    "Excelente servicio y ambiente acogedor. María escucha lo que quieres y te asesora profesionalmente. Mis mechas quedaron perfectas. ¡Volveré seguro!"
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-xl">
-                      EG
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-bold text-gray-900">Elena García</h3>
-                      <div className="flex text-yellow-400">
-                        {'★★★★★'.split('').map((star, i) => (
-                          <span key={i}>{star}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 italic leading-relaxed">
-                    "Trato cercano y profesional. Las marcas que utiliza (RICA y ROSSETY) son de las mejores del mercado. Mi pelo nunca ha estado mejor. 100% recomendable."
-                  </p>
-                </div>
-              </div>
-
-              <div className="text-center">
+            <div className="w-full md:w-9/10 h-[500px] mx-auto">
+              
+                <script src="https://embedsocial.com/js/iframe.js"></script>
+                            <iframe
+                              style={{ padding: 0, width: '100%', height: '100%' }}
+                              scrolling="si"
+                              src="https://embedsocial.com/api/pro_hashtag/354ea85442567af1f9b55480e6aed766abf1eeb6"
+                            ></iframe>
+                            <script dangerouslySetInnerHTML={{
+                              __html: `iFrameResize();`
+                            }} />
+            </div>   
+             
+               <div className="mt-8 text-center">
                 <a
-                  href="https://www.google.com/maps/place/Mar%C3%ADa+Lainez+Hair+Stylist+Sotogrande/@36.485976,-5.283662,17z/data=!4m8!3m7!1s0xd0d0e5c89d5b9e1:0x3f4e5a6b7c8d9e0f!8m2!3d36.485976!4d-5.283662!9m1!1b1!16s%2Fg%2F11j8_qm5rt"
+                  href="https://www.google.com/search?sa=X&sca_esv=0d39acdbfaa95ae9&sxsrf=AE3TifOyaOt4lpNjAEm4wTTIGuvd41orSw:1767013319436&q=Mar%C3%ADa+Lainez+Hair+Stylist+Sotogrande+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNLE0szQ0MDK0NDUyMTIxMzYyNtrAyPiKUc83sejw2kQFn8TMvNQqBY_EzCKF4JLKnMziEoXg_JL89KLEvJRUhaDU4tTDGxOLF7GSqAEA61uCnH0AAAA&rldimm=14969102195242463232&tbm=lcl&hl=es-ES&ved=2ahUKEwj8s9_J7eKRAxUeUKQEHYMsN3oQ9fQKegQIUhAG&biw=1920&bih=911&dpr=1#lkt=LocalPoiReviews"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition-colors duration-300 shadow-lg hover:shadow-xl"
@@ -706,14 +700,14 @@ export default function Home() {
                   <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"/>
                   </svg>
-                  Ver todas las reseñas en Google
+                  {t.reviews.writeReview}
                 </a>
               </div>
-            </div>
+            
           </div>
         </section>
 
-        <section id="historia" className="py-20 bg-white">
+        <section id="historia" className="py-10 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
               {t.history.title}
@@ -725,7 +719,7 @@ export default function Home() {
               <div className="order-2 md:order-1">
                 <img
                   src="/historia.webp"
-                  alt="Nuestra Historia"
+                  alt={t.history.alt}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
@@ -882,7 +876,7 @@ export default function Home() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación de María Lainez Hair Stylist en Puerto Sotogrande"
+                  title={t.location.mapTitle}
                 ></iframe>
               </div>
             </div>
@@ -911,7 +905,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-900 hover:text-gray-700 transition-colors"
-                aria-label="Instagram"
+                aria-label={t.accessibility.instagram}
               >
                 <Instagram size={28} />
               </a>

@@ -74,7 +74,7 @@ export function ServicesDropdown({ translations, isMobile = false }: ServicesDro
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <button className="flex items-center gap-1 text-gray-900 hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent">
+      <button className="flex items-center gap-1 text-gray-900 hover:text-gray-700 font-medium hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent">
         {translations.services}
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>

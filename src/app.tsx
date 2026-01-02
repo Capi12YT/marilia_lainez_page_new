@@ -8,7 +8,6 @@ import Home from "@/pages/home";
 import SignIn from "@/pages/sign-in";
 import SignUp from "@/pages/sign-up";
 import DescargarApp from "@/pages/descargar-app";
-import ReservasApp from "@/pages/reservas-app";
 import Alisados from "@/pages/alisados";
 import Highlights from "@/pages/servicios/highlights";
 import Balayages from "@/pages/servicios/balayages";
@@ -26,7 +25,6 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/descargar-app" element={<DescargarApp />} />
-        <Route path="/reservas-app" element={<ReservasApp />} />
         <Route path="/alisados" element={<Alisados />} />
         <Route path="/servicios/highlights" element={<Highlights />} />
         <Route path="/servicios/balayages" element={<Balayages />} />

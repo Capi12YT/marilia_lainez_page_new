@@ -481,25 +481,11 @@ export default function DescargarApp() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto mb-20">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-black/10 rounded-3xl blur-3xl"></div>
-              <div className="relative bg-black rounded-3xl p-8 shadow-2xl">
-                <div className="aspect-[9/19] bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 rounded-[2.5rem] flex items-center justify-center overflow-hidden border-8 border-black shadow-xl">
-                  <div className="text-center px-8">
-                    <Smartphone className="w-24 h-24 mx-auto mb-6 text-black" />
-                    <div className="space-y-4">
-                      <div className="h-3 bg-black/20 rounded-full w-3/4 mx-auto"></div>
-                      <div className="h-3 bg-black/20 rounded-full w-full"></div>
-                      <div className="h-3 bg-black/20 rounded-full w-2/3 mx-auto"></div>
-                      <div className="grid grid-cols-2 gap-4 mt-8">
-                        <div className="h-20 bg-black/20 rounded-2xl"></div>
-                        <div className="h-20 bg-black/20 rounded-2xl"></div>
-                        <div className="h-20 bg-black/20 rounded-2xl"></div>
-                        <div className="h-20 bg-black/20 rounded-2xl"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/logo_app.webp"
+                alt="App Mockup"
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
 
             <div className="flex flex-col items-center justify-center space-y-6">
@@ -569,13 +555,6 @@ export default function DescargarApp() {
             </div>
           </div>
 
-          <div className="mt-20 text-center">
-            <div className="inline-block bg-yellow-400 rounded-full px-8 py-4 shadow-xl">
-              <p className="text-black font-bold text-lg">
-                {t.footer.brandName}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
       </main>
