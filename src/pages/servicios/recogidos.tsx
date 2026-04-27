@@ -24,7 +24,7 @@ const translations = {
     whereWeAre: 'Donde estamos',
     bookNow: 'Reservar',
     title: 'Recogidos Elegantes',
-    beforeAfter: 'Antes/Después',
+    beforeAfter: 'Después/Antes',
     after: 'Después',
     before: 'Antes',
     specialistsIn: 'Somos especialistas en recogidos',
@@ -54,7 +54,7 @@ const translations = {
     whereWeAre: 'Where we are',
     bookNow: 'Book Now',
     title: 'Elegant Updos',
-    beforeAfter: 'Before/After',
+    beforeAfter: 'After/Before',
     after: 'After',
     before: 'Before',
     specialistsIn: 'We are specialists in updos',
@@ -84,7 +84,7 @@ const translations = {
     whereWeAre: 'Où nous sommes',
     bookNow: 'Réserver',
     title: 'Chignons Élégants',
-    beforeAfter: 'Avant/Après',
+    beforeAfter: 'Après/Avant',
     after: 'Après',
     before: 'Avant',
     specialistsIn: 'Nous sommes spécialistes en chignons',
@@ -114,7 +114,7 @@ const translations = {
     whereWeAre: 'Wo wir sind',
     bookNow: 'Buchen',
     title: 'Elegante Hochsteckfrisuren',
-    beforeAfter: 'Vorher/Nachher',
+    beforeAfter: 'Nachher/Vorher',
     after: 'Nachher',
     before: 'Vorher',
     specialistsIn: 'Wir sind Spezialisten für Hochsteckfrisuren',
@@ -144,7 +144,7 @@ const translations = {
     whereWeAre: 'Dove siamo',
     bookNow: 'Prenota',
     title: 'Raccolti Eleganti',
-    beforeAfter: 'Prima/Dopo',
+    beforeAfter: 'Dopo/Prima',
     after: 'Dopo',
     before: 'Prima',
     specialistsIn: 'Siamo specialisti in raccolti',
@@ -163,7 +163,6 @@ export default function ServicePage() {
   const [language, setLanguage] = useState<Language>('es');
   const [showDropdown, setShowDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showAfter, setShowAfter] = useState(true);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -204,7 +203,7 @@ export default function ServicePage() {
               <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full cursor-pointer" />
             </button>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden min-[820px]:flex items-center gap-8">
             <Link
               to="/"
               className="text-gray-900 hover:text-gray-700 font-medium hover:border-b-2 hover:border-black transition-all pb-1 border-b-2 border-transparent"
@@ -238,7 +237,7 @@ export default function ServicePage() {
             </button>
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden min-[820px]:flex items-center gap-4">
             <button
               onClick={() => navigate('/descargar-app')}
               className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
@@ -325,7 +324,7 @@ export default function ServicePage() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 hover:bg-yellow-300 rounded transition-colors"
+            className="min-[820px]:hidden p-2 hover:bg-yellow-300 rounded transition-colors"
             aria-label="Toggle menu"
           >
             <Menu className="w-6 h-6" />
@@ -336,14 +335,14 @@ export default function ServicePage() {
       {mobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 min-[820px]:hidden"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="fixed top-0 right-0 h-full w-80 bg-yellow-400 z-50 md:hidden transform transition-transform duration-300 overflow-y-auto">
+          <div className="fixed top-0 right-0 h-full w-80 bg-yellow-400 z-50 min-[820px]:hidden transform transition-transform duration-300 overflow-y-auto">
             <div className="p-6">
               <div className="flex items-center justify-between mb-8">
                 <img
-                  src="/logo-maria-lainez.jpg"
+                  src="/logo-header.webp"
                   alt="Logo"
                   className="h-10 w-10 rounded-full object-cover"
                 />
@@ -454,19 +453,13 @@ export default function ServicePage() {
         <section className="container mx-auto px-4 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
-                  <div className="relative bg-gray-200 rounded-xl overflow-hidden shadow-xl h-[50vh] xl:h-[70vh]">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <p className="text-gray-500 text-2xl font-medium">
-                        {showAfter ? t.after : t.before}
-                      </p>
-                    </div>
-                  </div>
-                <button
-                  onClick={() => setShowAfter(!showAfter)}
-                  className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-                >
-                  {t.beforeAfter}
-                </button>
+              <div className="relative bg-gray-200 rounded-xl overflow-hidden shadow-xl h-[50vh] xl:h-[70vh]">
+                <img
+                  src="/recogido.jpeg"
+                  alt="Recogido profesional"
+                  className="w-full object-cover"
+                />
+              </div>
             </div>
 
             <div className="space-y-6">
@@ -541,3 +534,4 @@ export default function ServicePage() {
     </div>
   );
 }
+

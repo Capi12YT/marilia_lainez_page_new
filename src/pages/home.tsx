@@ -414,7 +414,7 @@ export default function Home() {
               <img src="/logo-header.webp" alt={t.footer.brandName} className="h-12 w-12 object-cover rounded-full cursor-pointer" />
             </button>
             
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden min-[820px]:flex items-center gap-6">
               <button
                 onClick={scrollToTop}
                 className="text-gray-900 hover:text-gray-700 font-medium transition-all pb-1 border-b-2 border-transparent hover:border-black"
@@ -448,7 +448,7 @@ export default function Home() {
               </button>
             </nav>
 
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden min-[820px]:flex items-center gap-4">
               <Link to="/descargar-app">
                 <Button
                   className="bg-black text-white hover:bg-gray-800 font-semibold px-6"
@@ -526,7 +526,7 @@ export default function Home() {
             </div>
 
             <button
-              className="md:hidden text-gray-900 p-2"
+              className="min-[820px]:hidden text-gray-900 p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={t.accessibility.toggleMenu}
             >
@@ -536,14 +536,14 @@ export default function Home() {
         </div>
 
         <div
-          className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity md:hidden ${
+          className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity min-[820px]:hidden ${
             mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
           onClick={() => setMobileMenuOpen(false)}
         />
 
         <div
-          className={`fixed top-0 right-0 h-full w-80 bg-yellow-400 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+          className={`fixed top-0 right-0 h-full w-80 bg-yellow-400 z-50 transform transition-transform duration-300 ease-in-out min-[820px]:hidden ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >

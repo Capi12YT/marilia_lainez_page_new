@@ -1,4 +1,4 @@
-import { Smartphone, Check, Calendar, Clock, Bell, Star, Instagram, Menu, X, Globe, Apple } from 'lucide-react';
+import { Check, Calendar, Clock, Bell, Star, Instagram, Menu, X, Globe, Apple } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
