@@ -6,6 +6,8 @@ import { WhatsAppButton } from '@/components/whatsapp-button';
 
 type Language = 'es' | 'en' | 'fr' | 'de' | 'it';
 
+const languages: Language[] = ['es', 'en', 'fr', 'de', 'it'];
+
 const translations = {
   es: {
     home: 'Inicio',
@@ -277,47 +279,24 @@ export default function ServicePage() {
               </div>
 
               {showDropdown && (
-                <div className="absolute top-full right-0 mt-2 bg-white rounded-md shadow-lg p-1 z-50 min-w-[100px] animate-in fade-in slide-in-from-top-2 duration-200">
-                  <button
-                    onClick={() => {
-                      setLanguage('fr');
-                      setShowDropdown(false);
-                    }}
-                    className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
-                      language === 'fr'
-                        ? 'bg-yellow-400 text-gray-900'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                    }`}
-                  >
-                    FR
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLanguage('de');
-                      setShowDropdown(false);
-                    }}
-                    className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
-                      language === 'de'
-                        ? 'bg-yellow-400 text-gray-900'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                    }`}
-                  >
-                    DE
-                  </button>
-                  <button
-                    onClick={() => {
-                      setLanguage('it');
-                      setShowDropdown(false);
-                    }}
-                    className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
-                      language === 'it'
-                        ? 'bg-yellow-400 text-gray-900'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                    }`}
-                  >
-                    IT
-                  </button>
-                </div>
+                  <div className="absolute top-full right-0 mt-2 bg-white rounded-md shadow-lg p-1 z-50 min-w-[100px] animate-in fade-in slide-in-from-top-2 duration-200">
+                    {(['fr', 'de', 'it'] as Language[]).map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => {
+                          setLanguage(lang);
+                          setShowDropdown(false);
+                        }}
+                        className={`w-full px-4 py-2 rounded text-sm font-medium transition-colors text-left ${
+                          language === lang
+                            ? 'bg-yellow-400 text-gray-900'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                        }`}
+                      >
+                        {lang.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
               )}
             </div>
           </div>
@@ -399,47 +378,20 @@ export default function ServicePage() {
                 </button>
 
                 <div className="pt-6 border-t border-yellow-500">
-                  <div className="grid grid-cols-3 gap-2">
-                    <button
-                      onClick={() => setLanguage('es')}
-                      className={`px-3 py-2 rounded transition-colors ${
-                        language === 'es' ? 'bg-yellow-300 font-semibold' : 'hover:bg-yellow-300'
-                      }`}
-                    >
-                      ES
-                    </button>
-                    <button
-                      onClick={() => setLanguage('en')}
-                      className={`px-3 py-2 rounded transition-colors ${
-                        language === 'en' ? 'bg-yellow-300 font-semibold' : 'hover:bg-yellow-300'
-                      }`}
-                    >
-                      EN
-                    </button>
-                    <button
-                      onClick={() => setLanguage('fr')}
-                      className={`px-3 py-2 rounded transition-colors ${
-                        language === 'fr' ? 'bg-yellow-300 font-semibold' : 'hover:bg-yellow-300'
-                      }`}
-                    >
-                      FR
-                    </button>
-                    <button
-                      onClick={() => setLanguage('de')}
-                      className={`px-3 py-2 rounded transition-colors ${
-                        language === 'de' ? 'bg-yellow-300 font-semibold' : 'hover:bg-yellow-300'
-                      }`}
-                    >
-                      DE
-                    </button>
-                    <button
-                      onClick={() => setLanguage('it')}
-                      className={`px-3 py-2 rounded transition-colors ${
-                        language === 'it' ? 'bg-yellow-300 font-semibold' : 'hover:bg-yellow-300'
-                      }`}
-                    >
-                      IT
-                    </button>
+                   <div className="grid grid-cols-3 gap-2">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => setLanguage(lang)}
+                        className={`px-3 py-2 rounded text-sm font-medium transition-colors ${
+                         language === lang
+                        ? 'bg-gray-900 text-white'
+                        : 'bg-white text-gray-900 hover:bg-gray-100'
+                        }`}
+                      >
+                        {lang.toUpperCase()}
+                      </button>
+                    ))}
                   </div>
                 </div>
               </nav>
