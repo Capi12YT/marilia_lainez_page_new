@@ -21,6 +21,7 @@ const translations = {
     permanentCurls: 'Rizos permanentes',
     cut: 'Corte',
     menCut: 'Corte Caballero',
+    event: 'Eventos',
     aboutUs: 'Nosotros',
     brands: 'Marcas',
     whereWeAre: 'Donde estamos',

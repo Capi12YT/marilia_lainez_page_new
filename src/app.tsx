@@ -18,6 +18,7 @@ import Rizos from "@/pages/servicios/rizos";
 import Corte from "@/pages/servicios/corte";
 import CorteCaballero from "@/pages/servicios/corte-caballero";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Eventos from "./pages/servicios/eventos";
 
 export function App() {
   return (
@@ -34,6 +35,7 @@ export function App() {
         <Route path="/servicios/rizos" element={<Rizos />} />
         <Route path="/servicios/corte" element={<Corte />} />
         <Route path="/servicios/corte-caballero" element={<CorteCaballero />} />
+        <Route path="/servicios/eventos" element={<Eventos />} />
 
         {/* Authentication routes */}
         <Route path="/signin" element={<SignIn />} />

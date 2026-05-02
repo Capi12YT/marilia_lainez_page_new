@@ -1,12 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, Globe, Trophy, ThumbsUp, RefreshCcw, Instagram } from 'lucide-react';
+import { Menu, X, Globe, ChevronLeft, ChevronRight, Instagram,RefreshCcw,Trophy,ThumbsUp } from 'lucide-react';
 import { ServicesDropdown } from '../../components/ServicesDropdown';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 
-type Language = 'es' | 'en' | 'fr' | 'de' | 'it';
+const images = [
+  '/evento.jpg',
+  '/evento-2.jpeg',
+];
 
-const languages: Language[] = ['es', 'en', 'fr', 'de', 'it'];
+const languages = ['es', 'en', 'fr', 'de', 'it'] as const;
+type Language = typeof languages[number];
 
 const translations = {
   es: {
@@ -26,15 +30,12 @@ const translations = {
     brands: 'Marcas',
     whereWeAre: 'Donde estamos',
     bookNow: 'Reservar',
-    title: 'Recogidos Elegantes',
-    beforeAfter: 'Después/Antes',
-    after: 'Después',
-    before: 'Antes',
-    specialistsIn: 'Somos especialistas en recogidos',
-    description1: 'Los recogidos elegantes son perfectos para eventos especiales, bodas y ocasiones formales. En María Lainez Hair Stylist creamos recogidos sofisticados que combinan técnica, creatividad y elegancia.',
-    description2: 'Desde moños clásicos hasta recogidos bohemios, trenzas elaboradas y estilos románticos, nuestro equipo de estilistas expertas puede crear cualquier look que desees. Cada recogido se adapta a tu vestimenta, estilo personal y tipo de cabello.',
-    description3: 'Utilizamos técnicas profesionales de fijación que aseguran que tu recogido se mantenga impecable durante todo el evento. También ofrecemos pruebas previas para eventos importantes como bodas, asegurando que el día especial todo sea perfecto.',
-    stat1: 'Nº1 en Recogidos',
+    title: 'Eventos',
+    specialistsIn: 'Especialistas en peinados y estilismo para eventos',
+    description1: 'En María Lainez Hair Stylist, creamos looks únicos para tus eventos más especiales. Desde bodas hasta celebraciones, nuestro equipo te acompaña para que brilles en cada ocasión.',
+    description2: 'Ofrecemos asesoría personalizada, peinados, recogidos y estilismo para novias, invitadas y todo tipo de eventos. Utilizamos productos de alta calidad para garantizar un acabado impecable y duradero.',
+    description3: 'Confía en nuestra experiencia para que tu día especial sea inolvidable. Reserva tu cita y déjate mimar por profesionales.',
+    stat1: 'Nº1 en Highlights',
     stat2: '100% Clientes Satisfechos',
     stat3: '10/10 Vuelven a Repetir',
     designedBy: 'Diseñado por CapJe © 2026',
@@ -57,15 +58,12 @@ const translations = {
     brands: 'Brands',
     whereWeAre: 'Where we are',
     bookNow: 'Book Now',
-    title: 'Elegant Updos',
-    beforeAfter: 'After/Before',
-    after: 'After',
-    before: 'Before',
-    specialistsIn: 'We are specialists in updos',
-    description1: 'Elegant updos are perfect for special events, weddings and formal occasions. At María Lainez Hair Stylist we create sophisticated updos that combine technique, creativity and elegance.',
-    description2: 'From classic buns to bohemian updos, elaborate braids and romantic styles, our team of expert stylists can create any look you desire. Each updo is adapted to your clothing, personal style and hair type.',
-    description3: 'We use professional fixation techniques that ensure your updo stays impeccable throughout the event. We also offer prior tests for important events such as weddings, ensuring everything is perfect on the special day.',
-    stat1: 'Nº1 in Updos',
+    title: 'Events',
+    specialistsIn: 'Specialists in event hairstyles and styling',
+    description1: 'At María Lainez Hair Stylist, we create unique looks for your most special events. From weddings to celebrations, our team is with you so you shine on every occasion.',
+    description2: 'We offer personalized advice, hairstyles, updos, and styling for brides, guests, and all kinds of events. We use high-quality products to ensure a flawless and long-lasting finish.',
+    description3: 'Trust our experience to make your special day unforgettable. Book your appointment and let professionals pamper you.',
+    stat1: 'Nº1 in Highlights',
     stat2: '100% Satisfied Customers',
     stat3: '10/10 Come Back',
     designedBy: 'Designed by CapJe © 2026',
@@ -88,15 +86,12 @@ const translations = {
     brands: 'Marques',
     whereWeAre: 'Où nous sommes',
     bookNow: 'Réserver',
-    title: 'Chignons Élégants',
-    beforeAfter: 'Après/Avant',
-    after: 'Après',
-    before: 'Avant',
-    specialistsIn: 'Nous sommes spécialistes en chignons',
-    description1: 'Les chignons élégants sont parfaits pour les événements spéciaux, les mariages et les occasions formelles. Chez María Lainez Hair Stylist, nous créons des chignons sophistiqués qui combinent technique, créativité et élégance.',
-    description2: "Des chignons classiques aux chignons bohèmes, tresses élaborées et styles romantiques, notre équipe de stylistes expertes peut créer n\'importe quel look que vous désirez. Chaque chignon est adapté à votre tenue, style personnel et type de cheveux.",
-    description3: "Nous utilisons des techniques professionnelles de fixation qui assurent que votre chignon reste impeccable pendant tout l\'événement. Nous offrons également des essais préalables pour les événements importants comme les mariages, assurant que tout soit parfait le jour spécial.",
-    stat1: 'Nº1 en Chignons',
+    title: 'Événements',
+    specialistsIn: 'Spécialistes des coiffures et du stylisme pour événements',
+    description1: 'Chez María Lainez Hair Stylist, nous créons des looks uniques pour vos événements les plus spéciaux. Des mariages aux célébrations, notre équipe vous accompagne pour que vous brilliez à chaque occasion.',
+    description2: 'Nous offrons des conseils personnalisés, des coiffures, des chignons et du stylisme pour les mariées, les invitées et tous types d’événements. Nous utilisons des produits de haute qualité pour garantir une finition impeccable et durable.',
+    description3: 'Faites confiance à notre expérience pour que votre journée spéciale soit inoubliable. Réservez votre rendez-vous et laissez-vous choyer par des professionnels.',
+    stat1: 'Nº1 en Highlights',
     stat2: '100% Clients Satisfaits',
     stat3: '10/10 Reviennent',
     designedBy: 'Conçu par CapJe © 2026',
@@ -119,15 +114,12 @@ const translations = {
     brands: 'Marken',
     whereWeAre: 'Wo wir sind',
     bookNow: 'Buchen',
-    title: 'Elegante Hochsteckfrisuren',
-    beforeAfter: 'Nachher/Vorher',
-    after: 'Nachher',
-    before: 'Vorher',
-    specialistsIn: 'Wir sind Spezialisten für Hochsteckfrisuren',
-    description1: 'Elegante Hochsteckfrisuren sind perfekt für besondere Veranstaltungen, Hochzeiten und formelle Anlässe. Bei María Lainez Hair Stylist kreieren wir raffinierte Hochsteckfrisuren, die Technik, Kreativität und Eleganz kombinieren.',
-    description2: 'Von klassischen Knoten bis zu böhmischen Hochsteckfrisuren, kunstvollen Zöpfen und romantischen Stilen kann unser Team erfahrener Stylisten jeden gewünschten Look kreieren. Jede Hochsteckfrisur wird an Ihre Kleidung, Ihren persönlichen Stil und Ihren Haartyp angepasst.',
-    description3: 'Wir verwenden professionelle Fixiertechniken, die sicherstellen, dass Ihre Hochsteckfrisur während der gesamten Veranstaltung makellos bleibt. Wir bieten auch Probeläufe für wichtige Ereignisse wie Hochzeiten an, um sicherzustellen, dass am besonderen Tag alles perfekt ist.',
-    stat1: 'Nº1 in Hochsteckfrisuren',
+    title: 'Events',
+    specialistsIn: 'Spezialisten für Eventfrisuren und Styling',
+    description1: 'Bei María Lainez Hair Stylist kreieren wir einzigartige Looks für Ihre besonderen Anlässe. Von Hochzeiten bis zu Feiern begleitet Sie unser Team, damit Sie bei jedem Anlass strahlen.',
+    description2: 'Wir bieten persönliche Beratung, Frisuren, Hochsteckfrisuren und Styling für Bräute, Gäste und alle Arten von Events. Wir verwenden hochwertige Produkte für ein makelloses und langanhaltendes Ergebnis.',
+    description3: 'Vertrauen Sie auf unsere Erfahrung, damit Ihr besonderer Tag unvergesslich wird. Buchen Sie Ihren Termin und lassen Sie sich von Profis verwöhnen.',
+    stat1: 'Nº1 in Highlights',
     stat2: '100% Zufriedene Kunden',
     stat3: '10/10 Kommen Zurück',
     designedBy: 'Entworfen von CapJe © 2026',
@@ -150,15 +142,12 @@ const translations = {
     brands: 'Marchi',
     whereWeAre: 'Dove siamo',
     bookNow: 'Prenota',
-    title: 'Raccolti Eleganti',
-    beforeAfter: 'Dopo/Prima',
-    after: 'Dopo',
-    before: 'Prima',
-    specialistsIn: 'Siamo specialisti in raccolti',
-    description1: 'I raccolti eleganti sono perfetti per eventi speciali, matrimoni e occasioni formali. Da María Lainez Hair Stylist creiamo raccolti sofisticati che combinano tecnica, creatività ed eleganza.',
-    description2: 'Dai chignon classici ai raccolti bohémien, trecce elaborate e stili romantici, il nostro team di stiliste esperte può creare qualsiasi look desideriate. Ogni raccolto è adattato al vostro abbigliamento, stile personale e tipo di capelli.',
-    description3: "Utilizziamo tecniche professionali di fissaggio che assicurano che il vostro raccolto rimanga impeccabile durante tutto l\'evento. Offriamo anche prove preliminari per eventi importanti come matrimoni, assicurando che il giorno speciale tutto sia perfetto.",
-    stat1: 'Nº1 in Raccolti',
+    title: 'Eventi',
+    specialistsIn: 'Specialisti in acconciature e styling per eventi',
+    description1: 'Da María Lainez Hair Stylist creiamo look unici per i tuoi eventi più speciali. Dai matrimoni alle celebrazioni, il nostro team ti accompagna per farti brillare in ogni occasione.',
+    description2: 'Offriamo consulenza personalizzata, acconciature, raccolti e styling per spose, invitate e ogni tipo di evento. Utilizziamo prodotti di alta qualità per garantire una finitura impeccabile e duratura.',
+    description3: 'Affidati alla nostra esperienza per rendere indimenticabile il tuo giorno speciale. Prenota il tuo appuntamento e lasciati coccolare da professionisti.',
+    stat1: 'Nº1 in Highlights',
     stat2: '100% Clienti Soddisfatti',
     stat3: '10/10 Tornano',
     designedBy: 'Progettato da CapJe © 2026',
@@ -166,7 +155,50 @@ const translations = {
   },
 };
 
-export default function ServicePage() {
+function Carousel({ images }: { images: string[] }) {
+  const [current, setCurrent] = useState(0);
+  const total = images.length;
+
+  const prev = () => setCurrent((c) => (c === 0 ? total - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === total - 1 ? 0 : c + 1));
+
+  return (
+    <div className="relative w-full max-w-xl mx-auto">
+      <img
+        src={images[current]}
+        alt={`Evento ${current + 1}`}
+        className="w-full h-130 object-cover rounded-lg shadow-lg transition-all duration-500"
+        style={{ aspectRatio: '4/3' }}
+      />
+      <button
+        onClick={prev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-yellow-400 text-gray-900 rounded-full p-2 shadow-md"
+        aria-label="Anterior"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-yellow-400 text-gray-900 rounded-full p-2 shadow-md"
+        aria-label="Siguiente"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+      <div className="flex justify-center gap-2 mt-3">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrent(idx)}
+            className={`w-3 h-3 rounded-full ${current === idx ? 'bg-yellow-400' : 'bg-gray-300'}`}
+            aria-label={`Ir a la imagen ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function EventosPage() {
   const [language, setLanguage] = useState<Language>('es');
   const [showDropdown, setShowDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -181,12 +213,11 @@ export default function ServicePage() {
         setShowDropdown(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+   const scrollToSection = (sectionId: string) => {
     navigate('/');
     setTimeout(() => {
       const element = document.getElementById(sectionId);
@@ -199,17 +230,15 @@ export default function ServicePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-           <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
+      <header className="bg-yellow-400 sticky top-0 z-50 shadow-md">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-         
-          <button 
-              onClick={() => navigate('/')}
-              className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
-              aria-label="Ir al inicio"
-            >
-              <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full cursor-pointer" />
-            </button>
-
+          <button
+            onClick={() => navigate('/')}
+            className="focus:outline-none focus:ring-2 focus:ring-yellow-600 rounded-full transition-transform hover:scale-105"
+            aria-label="Ir al inicio"
+          >
+            <img src="/logo-header.webp" alt="María Lainez Hair Stylist" className="h-12 w-12 object-cover rounded-full cursor-pointer" />
+          </button>
           <nav className="hidden min-[820px]:flex items-center gap-8">
             <Link
               to="/"
@@ -243,7 +272,6 @@ export default function ServicePage() {
               {t.whereWeAre}
             </button>
           </nav>
-
           <div className="hidden min-[820px]:flex items-center gap-4">
             <button
               onClick={() => navigate('/descargar-app')}
@@ -283,7 +311,7 @@ export default function ServicePage() {
                 </button>
               </div>
 
-             {showDropdown && (
+              {showDropdown && (
                   <div className="absolute top-full right-0 mt-2 bg-white rounded-md shadow-lg p-1 z-50 min-w-[100px] animate-in fade-in slide-in-from-top-2 duration-200">
                     {(['fr', 'de', 'it'] as Language[]).map((lang) => (
                       <button
@@ -305,7 +333,6 @@ export default function ServicePage() {
               )}
             </div>
           </div>
-
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="min-[820px]:hidden p-2 hover:bg-yellow-300 rounded transition-colors"
@@ -315,7 +342,6 @@ export default function ServicePage() {
           </button>
         </div>
       </header>
-
       {mobileMenuOpen && (
         <>
           <div
@@ -384,7 +410,7 @@ export default function ServicePage() {
                 </button>
 
                 <div className="pt-6 border-t border-yellow-500">
-                  <div className="grid grid-cols-3 gap-2">
+                   <div className="grid grid-cols-3 gap-2">
                     {languages.map((lang) => (
                       <button
                         key={lang}
@@ -405,31 +431,22 @@ export default function ServicePage() {
           </div>
         </>
       )}
-
       <main className="flex-1">
         <section className="container mx-auto px-4 py-16">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="space-y-6">
-              <div className="relative bg-gray-200 rounded-xl overflow-hidden shadow-xl h-[50vh] xl:h-[70vh]">
-                <img
-                  src="/recogido.jpeg"
-                  alt="Recogido profesional"
-                  className="w-full object-cover"
-                />
-              </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex items-center justify-center min-h-[420px] md:min-h-[520px] lg:min-h-[600px]">
+              <Carousel images={images} />
             </div>
-
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900">{t.title}</h1>
-              <h2 className="text-2xl font-semibold text-yellow-600">{t.specialistsIn}</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">{t.description1}</p>
-              <p className="text-lg text-gray-700 leading-relaxed">{t.description2}</p>
-              <p className="text-lg text-gray-700 leading-relaxed">{t.description3}</p>
+            <div className="flex flex-col justify-center min-h-[420px] md:min-h-[520px] lg:min-h-[600px]">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">{t.title}</h1>
+              <h2 className="text-xl font-semibold text-yellow-600 mb-4">{t.specialistsIn}</h2>
+              <p className="text-gray-700 mb-4">{t.description1}</p>
+              <p className="text-gray-700 mb-4">{t.description2}</p>
+              <p className="text-gray-700 mb-6">{t.description3}</p>
             </div>
           </div>
         </section>
-
-        <section className="bg-yellow-50 py-16">
+         <section className="bg-yellow-50 py-16">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="bg-white rounded-xl shadow-lg p-8 text-center transform hover:scale-105 transition-transform">
@@ -462,8 +479,7 @@ export default function ServicePage() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-yellow-400 py-8">
+    <footer className="bg-yellow-400 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
             <div className="flex-1 text-center md:text-left">
@@ -486,9 +502,7 @@ export default function ServicePage() {
           </div>
         </div>
       </footer>
-
       <WhatsAppButton />
     </div>
   );
 }
-

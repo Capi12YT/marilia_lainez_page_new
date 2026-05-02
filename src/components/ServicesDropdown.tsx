@@ -18,6 +18,7 @@ interface ServicesDropdownProps {
     permanentCurls: string;
     cut: string;
     menCut: string;
+    event: string;
   };
   isMobile?: boolean;
 }
@@ -28,8 +29,9 @@ const services: Service[] = [
   { nameKey: 'color', path: '/servicios/color' },
   { nameKey: 'hairstyles', path: '/servicios/peinados' },
   { nameKey: 'updos', path: '/servicios/recogidos' },
-  { nameKey: 'permanentCurls', path: '/servicios/rizos' },
   { nameKey: 'cut', path: '/servicios/corte' },
+  { nameKey: 'event', path: '/servicios/eventos' },
+  { nameKey: 'permanentCurls'},
   { nameKey: 'menCut' },
 ];
 
