@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, Globe, ChevronLeft, ChevronRight, Instagram,RefreshCcw,Trophy,ThumbsUp } from 'lucide-react';
+import { Menu, X, Globe, Instagram,RefreshCcw,Trophy,ThumbsUp } from 'lucide-react';
 import { ServicesDropdown } from '../../components/ServicesDropdown';
+import { Carrusel } from '../../components/Carrusel';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 
 const images = [
@@ -155,48 +156,6 @@ const translations = {
   },
 };
 
-function Carousel({ images }: { images: string[] }) {
-  const [current, setCurrent] = useState(0);
-  const total = images.length;
-
-  const prev = () => setCurrent((c) => (c === 0 ? total - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === total - 1 ? 0 : c + 1));
-
-  return (
-    <div className="relative w-full max-w-xl mx-auto">
-      <img
-        src={images[current]}
-        alt={`Evento ${current + 1}`}
-        className="w-full h-130 object-cover rounded-lg shadow-lg transition-all duration-500"
-        style={{ aspectRatio: '4/3' }}
-      />
-      <button
-        onClick={prev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-yellow-400 text-gray-900 rounded-full p-2 shadow-md"
-        aria-label="Anterior"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-yellow-400 text-gray-900 rounded-full p-2 shadow-md"
-        aria-label="Siguiente"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-      <div className="flex justify-center gap-2 mt-3">
-        {images.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`w-3 h-3 rounded-full ${current === idx ? 'bg-yellow-400' : 'bg-gray-300'}`}
-            aria-label={`Ir a la imagen ${idx + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function EventosPage() {
   const [language, setLanguage] = useState<Language>('es');
@@ -435,7 +394,7 @@ export default function EventosPage() {
         <section className="container mx-auto px-4 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex items-center justify-center min-h-[420px] md:min-h-[520px] lg:min-h-[600px]">
-              <Carousel images={images} />
+              <Carrusel images={images} />
             </div>
             <div className="flex flex-col justify-center min-h-[420px] md:min-h-[520px] lg:min-h-[600px]">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">{t.title}</h1>

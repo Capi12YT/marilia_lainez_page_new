@@ -3,6 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe, Trophy, ThumbsUp, RefreshCcw, Instagram } from 'lucide-react';
 import { ServicesDropdown } from '../../components/ServicesDropdown';
 import { WhatsAppButton } from '@/components/whatsapp-button';
+import { Carrusel } from '../../components/Carrusel';
+
+const images = [
+  '/corte-2.jpeg',
+  '/corte.jpeg',
+
+];
 
 type Language = 'es' | 'en' | 'fr' | 'de' | 'it';
 
@@ -173,6 +180,7 @@ export default function ServicePage() {
   const [showAfter, setShowAfter] = useState(true);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  
 
   const t = translations[language];
 
@@ -411,19 +419,7 @@ export default function ServicePage() {
         <section className="container mx-auto px-4 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
-                  <div className="relative bg-gray-200 rounded-xl overflow-hidden shadow-xl h-[50vh] xl:h-[70vh]">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <p className="text-gray-500 text-2xl font-medium">
-                        {showAfter ? t.after : t.before}
-                      </p>
-                    </div>
-                  </div>
-                <button
-                  onClick={() => setShowAfter(!showAfter)}
-                  className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-                >
-                  {t.beforeAfter}
-                </button>
+              <Carrusel images={images} />
             </div>
 
             <div className="space-y-6">
