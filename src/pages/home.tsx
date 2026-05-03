@@ -697,7 +697,7 @@ export default function Home() {
              
                <div className="mt-8 text-center">
                 <a
-                  href="https://www.google.com/search?sa=X&sca_esv=0d39acdbfaa95ae9&sxsrf=AE3TifOyaOt4lpNjAEm4wTTIGuvd41orSw:1767013319436&q=Mar%C3%ADa+Lainez+Hair+Stylist+Sotogrande+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNLE0szQ0MDK0NDUyMTIxMzYyNtrAyPiKUc83sejw2kQFn8TMvNQqBY_EzCKF4JLKnMziEoXg_JL89KLEvJRUhaDU4tTDGxOLF7GSqAEA61uCnH0AAAA&rldimm=14969102195242463232&tbm=lcl&hl=es-ES&ved=2ahUKEwj8s9_J7eKRAxUeUKQEHYMsN3oQ9fQKegQIUhAG&biw=1920&bih=911&dpr=1#lkt=LocalPoiReviews"
+                  href="https://search.google.com/local/writereview?placeid=ChIJm-bDivDFDA0RAHDyCSPvvM8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-4 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition-colors duration-300 shadow-lg hover:shadow-xl"
