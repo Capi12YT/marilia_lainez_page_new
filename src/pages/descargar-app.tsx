@@ -16,7 +16,7 @@ const translations = {
       highlights: 'Highlights & Style',
       balayages: 'Balayages & Style',
       color: 'Color',
-      event: 'events',
+      event: 'Eventos',
       hairstyles: 'Peinados',
       updos: 'Recogidos',
       permanentCurls: 'Rizos permanentes',
